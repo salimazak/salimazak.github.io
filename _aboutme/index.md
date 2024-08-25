@@ -1,6 +1,7 @@
 ---
 title: "About Me"
 layout: page
+classes: no-sidebar
 excerpt: "About Me"
 author_profile: true
 redirect_from: 
