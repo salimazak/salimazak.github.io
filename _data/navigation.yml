@@ -9,7 +9,7 @@ main:
     url: /teaching/ 
 
   - title: "About Me"
-    url: /aboutme/ 
+    URL: /_aboutme/ 
     
   - title: "Publications"
     url: /publications/
