@@ -9,10 +9,10 @@ redirect_from:
 - /about.html
 ---
 
-<img src="/images/SA2.JPG" alt="SA2" style="float: left; width: 300px; margin-right: 15px; margin-bottom: 50px;">
+<img src="/images/SA2.JPG" alt="SA2" style="float: left; width: 300px; margin-left: 15px; margin-right: 30px; margin-bottom: 50px;">
 
 
-
+<div class="text-container">
 Salim Azak is a lecturer at the Structural and Earthquake Engineering Laboratory in the Department of Civil Engineering at Middle East Technical University. He holds a Ph.D. from the RACLAB of Electrical and Electronics Engineering at Konya Technical University, supervised by Prof. Akif Durdu. His doctoral thesis focused on self-driving cars.
 
 His research interests include end-to-end autonomous driving systems, depth estimation, driving scene segmentation, and multi-task learning. His expertise also extends to critical areas such as visual SLAM, localization, state estimation, and visual odometry.
@@ -34,4 +34,4 @@ Electronic Letters
 ICRA (IEEE International Conference on Robotics and Automation)
 IROS (IEEE/RSJ International Conference on Intelligent Robots and Systems)
 ITSC (IEEE Intelligent Transportation Systems Conference)
-
+</div>
