@@ -1,7 +1,7 @@
 ---
 title: "About Me"
 layout: page
-<!--classes: no-sidebar-->
+classes: no-sidebar
 excerpt: "About Me"
 author_profile: true
 redirect_from: 
@@ -9,7 +9,7 @@ redirect_from:
 - /about.html
 ---
 
-(/images/SA2.jpg){ .align-left width="300px"}
+(SA2.jpg){ .align-left width="300px"}
 
 Salim Azak is a lecturer at the Structural and Earthquake Engineering Laboratory in the Department of Civil Engineering at Middle East Technical University. He holds a Ph.D. from the RACLAB of Electrical and Electronics Engineering at Konya Technical University, supervised by Prof. Akif Durdu. His doctoral thesis focused on self-driving cars.
 
