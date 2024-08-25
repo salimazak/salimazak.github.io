@@ -15,7 +15,7 @@ Dr. Azak is also an Associate Editor at [IEEE Robotics and Automation Letters](h
 
 # News
 <!-- Twitter Timeline Widget -->
-<a class="twitter-timeline" href="<a href="https://twitter.com/x?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @x</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>">Tweets by salimazak</a>
+<a class="twitter-timeline" href="https://twitter.com/x?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @x</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>">Tweets by salimazak</a>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
