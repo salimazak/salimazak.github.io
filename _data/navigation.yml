@@ -9,7 +9,7 @@ main:
     url: /contact/ 
 
   - title: "About Me"
-    URL: /aboutme/ 
+    url: /aboutme/ 
     
   - title: "Publications"
     url: /publications/
