@@ -50,13 +50,15 @@
 .page__footer-follow {
   max-width: 1200px; /* Adjust this value as needed */
   margin: 0 auto;   /* Centers the footer */
-  padding: 5px;    /* Add padding for spacing */
+  padding: 2px 0;    /* Add padding for spacing */
+  line-height: 1.2; /* Reduces line spacing within the footer */
 }
 
 .page__footer-copyright {
   max-width: 1200px; /* Adjust this value as needed */
   margin: 0 auto;   /* Centers the copyright text */
-  padding: 5px;    /* Add padding for spacing */
+  padding: 2px 0;    /* Add padding for spacing */
+  line-height: 1; /* Reduces line spacing within the footer */
 }
 
 .image-with-text {
