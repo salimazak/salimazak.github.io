@@ -14,8 +14,7 @@ His research interests include end-to-end autonomous driving systems, depth esti
 Dr. Azak is also an Associate Editor at [IEEE Robotics and Automation Letters](https://www.ieee-ras.org/publications/ra-l). 
 
 # News
-<!-- Twitter Timeline Widget -->
-<a class="twitter-timeline" data-height="1000" href="https://twitter.com/salimazak?ref_src=twsrc%5Etfw">Tweets by salimazak</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+{% include twitter-timeline.html %}
 
 
 <!--A data-driven personal website
