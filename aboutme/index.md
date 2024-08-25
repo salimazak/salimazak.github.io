@@ -13,25 +13,31 @@ redirect_from:
 
 
 <div class="text-container">
-Salim Azak is a lecturer at the Structural and Earthquake Engineering Laboratory in the Department of Civil Engineering at Middle East Technical University. He holds a Ph.D. from the RACLAB of Electrical and Electronics Engineering at Konya Technical University, supervised by Prof. Akif Durdu. His doctoral thesis focused on self-driving cars.
+  <p>Salim Azak is a lecturer at the Structural and Earthquake Engineering Laboratory in the Department of Civil Engineering at Middle East Technical University. He holds a Ph.D. from the RACLAB of Electrical and Electronics Engineering at Konya Technical University, supervised by Prof. Akif Durdu. His doctoral thesis focused on self-driving cars.</p>
 
-His research interests include end-to-end autonomous driving systems, depth estimation, driving scene segmentation, and multi-task learning. His expertise also extends to critical areas such as visual SLAM, localization, state estimation, and visual odometry.
+  <p>His research interests include end-to-end autonomous driving systems, depth estimation, driving scene segmentation, and multi-task learning. His expertise also extends to critical areas such as visual SLAM, localization, state estimation, and visual odometry.</p>
 
-Dr. Azak is an active member of several prestigious organizations, including:
-IEEE,
-IEEE Robotics and Automation Society,
-IEEE Computer Society,
-IEEE Intelligent Transportation Systems Society,
-IEEE Signal Processing Society,
-Pattern Analysis and Machine Intelligence Technical Committee (PAMI-TC).
+  <p>Dr. Azak is an active member of several prestigious organizations, including:
+    <ul>
+      <li>IEEE</li>
+      <li>IEEE Robotics and Automation Society</li>
+      <li>IEEE Computer Society</li>
+      <li>IEEE Intelligent Transportation Systems Society</li>
+      <li>IEEE Signal Processing Society</li>
+      <li>Pattern Analysis and Machine Intelligence Technical Committee (PAMI-TC)</li>
+    </ul>
+  </p>
 
-Dr. Azak has also served as a reviewer for numerous transactions, journals, and international conferences, including:
-
-IEEE Transactions on Robotics
-IEEE Robotics and Automation Letters
-IJRR (International Journal of Robotics Research)
-Electronic Letters
-ICRA (IEEE International Conference on Robotics and Automation)
-IROS (IEEE/RSJ International Conference on Intelligent Robots and Systems)
-ITSC (IEEE Intelligent Transportation Systems Conference)
+  <p>Dr. Azak has also served as a reviewer for numerous transactions, journals, and international conferences, including:
+    <ul>
+      <li>IEEE Transactions on Robotics</li>
+      <li>IEEE Robotics and Automation Letters</li>
+      <li>IJRR (International Journal of Robotics Research)</li>
+      <li>Electronic Letters</li>
+      <li>ICRA (IEEE International Conference on Robotics and Automation)</li>
+      <li>IROS (IEEE/RSJ International Conference on Intelligent Robots and Systems)</li>
+      <li>ITSC (IEEE Intelligent Transportation Systems Conference)</li>
+    </ul>
+  </p>
 </div>
+
