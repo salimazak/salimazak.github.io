@@ -7,3 +7,5 @@ redirect_from:
 - /_aboutme/
 - /about.html
 ---
+
+(/images/)
