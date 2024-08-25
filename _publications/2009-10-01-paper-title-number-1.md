@@ -1,13 +1,12 @@
 ---
 title: "Publications"
-layout: page  # or 'default', 'post', depending on your setup
+layout: publications  # or 'default', 'post', depending on your setup
 ---
 
 ## Publications
 
 You can also find my articles on my [Google Scholar profile](https://scholar.google.com).
 
----
 
 ### Journal Articles
 
