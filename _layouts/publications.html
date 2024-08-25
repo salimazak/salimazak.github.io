@@ -1,0 +1,32 @@
+---
+layout: default
+---
+
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en" }}">
+<head>
+  {% include head.html %}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+  {% include masthead.html %} <!-- Header or navigation -->
+  
+  <main id="content">
+    <div class="container">
+      <h1>{{ page.title }}</h1> <!-- Use the title specified in the markdown file -->
+
+      <section class="publications-list">
+        {{ content }} <!-- This is where the content from the Markdown file will be displayed -->
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    {% include footer.html %}
+  </footer>
+
+  {% include scripts.html %}
+
+</body>
+</html>
