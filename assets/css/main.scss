@@ -59,3 +59,15 @@
   padding: 5px;    /* Add padding for spacing */
 }
 
+.image-with-text {
+  float: left;
+  width: 300px; /* Adjust the image width */
+  margin-left: 15px;
+  margin-right: 50; /* Space between image and text */
+  margin-bottom: 15px; /* Space below the image */
+}
+
+.text-container {
+  width: 200px; /* Adjust this width as needed */
+  overflow: hidden; /* Ensures text wraps around the floated image */
+}
