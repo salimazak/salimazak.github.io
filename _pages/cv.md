@@ -42,7 +42,7 @@ Talks
   
 Professional Activities
 ======
-* Associate Editor at IEEE Robotics and Automation Letters
+* Associate Editor at IEEE Robotics and Automation Letters (RA-L)
 * Reviewer of the following journals and conferences
   * IEEE Transactions on Robotics
   * IEEE Robotics and Automation Letters
