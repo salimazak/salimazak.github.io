@@ -8,7 +8,7 @@ redirect_from:
 ---
 
 {% include base_path %}
-
+# CV
 Education
 ======
 * Ph.D in Electrical and Electronics Engineering, Konya Technical University
@@ -29,10 +29,10 @@ Work experience
 
 Publications
 ======
-  * ###Transactions or Journal papers:
+  * ### Transactions or Journal papers:
     * Azak, S., Bozkaya, F., Tiglioglu, S., Yusefi, A., Durdu, A., “A Unified Monocular Vision-Based Driving Model for Autonomous Vehicles with Multi-Task Capabilities”, IEEE Transactions on Intelligent Vehicle (Under Review, Minor Revision).
     * Azak, S., Bozkaya, F., Durdu, A., “RapidSense: A Diverse and Multi-modal Autonomous Driving Dataset”, IEEE Robotics and Automation Letters (In Preparation).
-  * ###Conference Papers:
+  * ### Conference Papers:
     * Azak, S. and Erdogan, E., "Performance evaluation of the grid-based FastSLAM in V-REP using MATLAB," IEEE 2018 14th International Conference on Advanced Trends in Radioelecrtronics, Telecommunications and Computer Engineering (TCSET), Lviv-Slavske, 2018, pp. 276-281. doi: 10.1109/TCSET.2018.8336202
     * Azak, S., Bozkaya, F., Durdu, A., Enhancing Generalization in Autonomous Driving: A Comparative Study of Data Augmentation Techniques, TOK2024 Conference, Konya, Türkiye, 2024. 
   
