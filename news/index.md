@@ -19,4 +19,7 @@ classes: no-sidebar
 
   I will be giving a tutorial titled "[Visual-based Prediction of Control Commands in Autonomous Driving Systems](https://tok2024.ktun.edu.tr/wp-content/uploads/2024/08/SalimAzak_TOK2024.pdf)" at the [TOK2024](https://tok2024.ktun.edu.tr/) conference.
 
+- ### Upcoming Event: Invited Speaker at RACLAB Mid-Term Camp
+
+  I will be giving a presentation titled "Applications of Artificial Intelligence" at RACLAB Mid-Term Camp.
 
