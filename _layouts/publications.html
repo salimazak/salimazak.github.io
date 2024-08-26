@@ -8,6 +8,37 @@ title: Publications
   {{ content }}
 </div>
 
+
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en" }}">
+<head>
+  {% include head.html %}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+  {% include masthead.html %} <!-- Header or navigation -->
+
+  <main id="content">
+    <div class="container">
+      <h1>{{ page.title }}</h1> <!-- Page title -->
+      <section class="publications-list">
+        {{ content }} <!-- Markdown content here -->
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    {% include footer.html %}
+  </footer>
+
+  {% include scripts.html %}
+
+</body>
+</html>
+
+
+
 <!--
 ---
 layout: default
