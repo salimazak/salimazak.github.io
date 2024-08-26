@@ -10,6 +10,7 @@ layout: compress
     {% include head.html %}
     {% include head/custom.html %}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
   </head>
 
   <body class="{{ page.classes }}">
@@ -17,26 +18,7 @@ layout: compress
     {% include browser-upgrade.html %}
     {% include masthead.html %}
 
-    <!-- Container for the three-column layout -->
-    <div class="container">
-      <!-- Sidebar on the left -->
-      <div class="sidebar">
-        {% include sidebar.html %}
-      </div>
-
-      <!-- Main content in the center -->
-      <div class="main-content">
-        {{ content }}
-      </div>
-
-      <!-- Visitor map widget on the right -->
-      <div class="right-widget">
-        <div class="visitor-map">
-          <h3>Where My Visitors Are From</h3>
-          <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=7yU4-8nEGjyXwXk3zoRxGmIsJofySGSt3WY9aqUCf20&cl=ffffff&w=a"></script>
-        </div>
-      </div>
-    </div>
+    {{ content }}
 
     <div class="page__footer">
       <footer>
