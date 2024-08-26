@@ -1,17 +1,17 @@
 ---
 permalink: /
-title: "Biography"
+title: ""
 author_profile: true
 redirect_from: 
   - /about/
   - /about.html
 ---
 
-Salim Azak is a Lecturer at the Structural and Earthquake Engineering Laboratory in the Department of Civil Engineering at Middle East Technical University. He holds a Ph.D. from the [RACLAB](https://raclab.org/) of Electrical and Electronics Engineering at [Konya Technical University](https://www.ktun.edu.tr/en/Universite/AnaSayfa), supervised by [Prof. Akif Durdu](https://ktun.edu.tr/tr/Universite/PersonelBilgi?prsnl=Lf2Y6O7yzgev56OW8aYYhFJ8fVJTwu9EnIcMFc5Oynw%3D). His doctoral thesis focused on self-driving cars.
+Salim Azak is a Lecturer at the Structural and Earthquake Engineering Laboratory in the Department of Civil Engineering at Middle East Technical University. He holds a Ph.D. from the [RACLAB](https://raclab.org/) of Electrical and Electronics Engineering at [Konya Technical University](https://www.ktun.edu.tr/en/Universite/AnaSayfa), supervised by [Prof. Akif Durdu](https://ktun.edu.tr/tr/Universite/PersonelBilgi?prsnl=Lf2Y6O7yzgev56OW8aYYhFJ8fVJTwu9EnIcMFc5Oynw%3D). His doctoral thesis focused on vision-based driving for autonomous vehicles.
 
-His research interests include end-to-end autonomous driving systems, depth estimation, driving scene segmentation, and multi-task learning. His expertise also extends to critical areas such as visual SLAM, localization, state estimation, and visual odometry.
+His research focuses on the intersection of robotics and computer vision, emphasizing sensor-based control systems. His primary interests lie in extracting meaningful information from visual data to facilitate robot navigation. Additionally, he explores the fusion of visual, inertial, and LiDAR sensors to enhance navigation accuracy. Within this scope, his work covers end-to-end autonomous driving systems, autonomous flight systems, depth estimation, scene segmentation, and multi-task learning. His expertise further extends to critical areas such as state estimation, localization, visual SLAM, and visual odometry.
 
-Dr. Azak is also an Associate Editor at [IEEE Robotics and Automation Letters](https://www.ieee-ras.org/publications/ra-l). 
+Dr. Azak is also an Associate Editor at [IEEE Robotics and Automation Letters (RA-L)](https://www.ieee-ras.org/publications/ra-l). 
 
 # News
 {% include twitter-timeline.html %}
