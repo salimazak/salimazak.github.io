@@ -1,3 +1,13 @@
+---
+title: "News"
+layout: page
+excerpt: "News"
+author_profile: true
+redirect_from: 
+- /news/
+- /index.md
+---
+
 <div class="text-container">
 
 ## News
