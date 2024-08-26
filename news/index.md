@@ -1,11 +1,3 @@
----
-title: "News"
-layout: page
-excerpt: "News"
-author_profile: true
----
-
-<div class="text-container">
 
 ## News
 
@@ -16,5 +8,3 @@ author_profile: true
 - ### Announcement: Associate Editor Position at IEEE Robotics and Automation Letters
 
   I have been appointed as an Associate Editor for the [IEEE Robotics and Automation Letters journal](https://www.ieee-ras.org/publications/ra-l).
-
-</div>
