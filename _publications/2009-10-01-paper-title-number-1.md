@@ -1,14 +1,15 @@
+<!---
 ---
 title: "Publications"
 layout: publications  # or 'default', 'post', depending on your setup
 ---
-
+-->
 ## Publications
 
 You can also find my articles on my [Google Scholar profile](https://scholar.google.com).
 
 
-### Journal Articles
+### Transactions or Journal Articles
 
 **A Unified Monocular Vision-Based Driving Model for Autonomous Vehicles with Multi-Task Capabilities (under review)**  
 *Published in IEEE Transactions on Intelligent Vehicles, 2024*
