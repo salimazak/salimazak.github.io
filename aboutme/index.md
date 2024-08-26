@@ -9,7 +9,7 @@ classes: no-sidebar
 <div class="text-container">
   <p>Salim Azak is a Lecturer at the Structural and Earthquake Engineering Laboratory in the Department of Civil Engineering at Middle East Technical University. He holds a Ph.D. from the <a href="https://raclab.org/">RACLAB</a> of Electrical and Electronics Engineering at <a href="https://www.ktun.edu.tr/en/Universite/AnaSayfa">Konya Technical University</a>, supervised by <a href="https://ktun.edu.tr/tr/Universite/PersonelBilgi?prsnl=Lf2Y6O7yzgev56OW8aYYhFJ8fVJTwu9EnIcMFc5Oynw%3D">Prof. Akif Durdu</a>. His doctoral thesis focused on self-driving cars.</p>
 
-  <p>His research interests include end-to-end autonomous driving systems, depth estimation, driving scene segmentation, and multi-task learning. His expertise also extends to critical areas such as visual SLAM, localization, state estimation, and visual odometry.</p>
+  <p>His research focuses on the intersection of robotics and computer vision, emphasizing sensor-based control systems. His primary interests lie in extracting meaningful information from visual data to facilitate robot navigation. Additionally, he explores the fusion of visual, inertial, and LiDAR sensors to enhance navigation accuracy. Within this scope, his work covers end-to-end autonomous driving systems, autonomous flight systems, and multi-task learning. His expertise further extends to critical areas such as state estimation, localization, visual SLAM, and visual odometry.</p>
 
   <p>Dr. Azak is an active member of several prestigious organizations, including:</p>
   <ul>
