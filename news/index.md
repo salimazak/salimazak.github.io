@@ -5,7 +5,7 @@ excerpt: "News"
 author_profile: true
 redirect_from: 
 - /news/
-- /index.md
+- /index.html
 ---
 
 <div class="text-container">
