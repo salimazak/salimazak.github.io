@@ -12,4 +12,4 @@ classes: no-sidebar
 
 - ### Announcement: Associate Editor Position at IEEE Robotics and Automation Letters
 
-  I have been appointed as an Associate Editor for the [IEEE Robotics and Automation Letters journal](https://www.ieee-ras.org/publications/ra-l).
+  I have been appointed as an Associate Editor for the [IEEE Robotics and Automation Letters](https://www.ieee-ras.org/publications/ra-l).
