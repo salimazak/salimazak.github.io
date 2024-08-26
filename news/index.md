@@ -4,13 +4,16 @@ layout: page
 classes: no-sidebar
 ---
 
-<img src="/images/SA2.JPG" alt="SA2" style="float: left; width: 300px; margin-left: 15px; margin-right: 30px; margin-bottom: 20px;">
-
-<!-- Visitor map widget -->
-<div class="visitor-map">
-  <h2>Where My Visitors Are From</h2>
-  <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=7yU4-8nEGjyXwXk3zoRxGmIsJofySGSt3WY9aqUCf20&cl=ffffff&w=a"></script>
+<!--<img src="/images/SA2.JPG" alt="SA2" style="float: left; width: 300px; margin-left: 15px; margin-right: 30px; margin-bottom: 20px;">-->
+<div class="left-sidebar">
+  <img src="/images/SA2.JPG" alt="SA2" class="profile-photo">
+  <!-- Visitor map widget -->
+  <div class="visitor-map">
+    <h2>Where My Visitors Are From</h2>
+    <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=7yU4-8nEGjyXwXk3zoRxGmIsJofySGSt3WY9aqUCf20&cl=ffffff&w=a"></script>
+  </div>
 </div>
+  
 
 # News
 
