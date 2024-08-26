@@ -1,6 +1,6 @@
 ---
 layout: archive
-title: "CV"
+title: ""
 permalink: /cv/
 author_profile: true
 redirect_from:
@@ -8,7 +8,8 @@ redirect_from:
 ---
 
 {% include base_path %}
-# CV
+CV
+==
 Education
 ======
 * Ph.D in Electrical and Electronics Engineering, Konya Technical University
