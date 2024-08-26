@@ -3,9 +3,6 @@ title: "News"
 layout: page
 excerpt: "News"
 author_profile: true
-redirect_from: 
-- /news/
-- /index.html
 ---
 
 <div class="text-container">
