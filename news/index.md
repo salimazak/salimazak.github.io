@@ -6,6 +6,7 @@ classes: no-sidebar
 
 <img src="/images/SA2.JPG" alt="SA2" style="float: left; width: 300px; margin-left: 15px; margin-right: 30px; margin-bottom: 50px;">
 #### News
+
 - ### Announcement: Associate Editor Position at IEEE Robotics and Automation Letters
 
   I have been appointed as an Associate Editor for the [IEEE Robotics and Automation Letters](https://www.ieee-ras.org/publications/ra-l).
