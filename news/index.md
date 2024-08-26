@@ -8,6 +8,6 @@
 
 - ### Announcement: Associate Editor Position at IEEE Robotics and Automation Letters
 
-  I have been appointed as an Associate Editor for the IEEE Robotics and Automation Letters journal.
+  I have been appointed as an Associate Editor for the [IEEE Robotics and Automation Letters journal](https://www.ieee-ras.org/publications/ra-l).
 
 </div>
