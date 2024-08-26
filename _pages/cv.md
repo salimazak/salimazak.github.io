@@ -9,7 +9,7 @@ redirect_from:
 
 {% include base_path %}
 CV
-==
+======
 Education
 ======
 * Ph.D in Electrical and Electronics Engineering, Konya Technical University
