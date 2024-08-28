@@ -24,8 +24,8 @@ Work experience
 * Electronics Engineer (2006-2008)  
    ORSIS Electronics & Automation  
      Projects  
-     - Designed and manufactured Automated Guided Vehicle (AGV) systems for TMMT TOYOTA Assembly Department.  
-     - Developed control software for AGV systems, ensuring efficient and reliable operations.  
+       Designed and manufactured Automated Guided Vehicle (AGV) systems for TMMT TOYOTA Assembly Department.  
+       Developed control software for AGV systems, ensuring efficient and reliable operations.  
 
 Publications
 ======
