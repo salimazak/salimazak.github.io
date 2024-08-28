@@ -17,15 +17,15 @@ Education
 
 Work experience
 ======
-* Lecturer (2009- Present)
-   Structural and Earthquake Engineering Laboratory, Civil Engineering Department
+* Lecturer (2009- Present)  
+   Structural and Earthquake Engineering Laboratory, Civil Engineering Department  
    Middle East Technical University
     
-* Electronics Engineer (2006-2008)
-   ORSIS Electronics & Automation
-     Projects
-     Designed and manufactured Automated Guided Vehicle (AGV) systems for TMMT TOYOTA Assembly Department.
-     Developed control software for AGV systems, ensuring efficient and reliable operations.
+* Electronics Engineer (2006-2008)  
+   ORSIS Electronics & Automation  
+     Projects  
+     Designed and manufactured Automated Guided Vehicle (AGV) systems for TMMT TOYOTA Assembly Department.  
+     Developed control software for AGV systems, ensuring efficient and reliable operations.  
 
 Publications
 ======
@@ -38,7 +38,8 @@ Publications
   
 Talks
 ======
-  * Tutorial at TOK2024 Conference (Topic: Vision-Based Prediction of Control Commands in Autonomous Driving Systems)
+  * Tutorial at TOK2024 Conference  
+    (Topic: Vision-Based Prediction of Control Commands in Autonomous Driving Systems)
   
 Professional Activities
 ======
