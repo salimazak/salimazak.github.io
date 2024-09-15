@@ -19,11 +19,20 @@
       {% if post.authors %}
         {{ post.authors }}, 
       {% endif %}
+      
+      <!-- Title -->
       <strong>{{ title }}</strong>, 
-      {% if post.venue %}
-        <i>{{ post.venue }}</i>, 
+
+      <!-- Venue Conditional Logic -->
+      {% if post.category == 'journal' %}
+        <i>{{ post.journal }}</i>,
+      {% elsif post.category == 'conference' %}
+        <i>{{ post.conference }}</i>,
       {% endif %}
+      
+      <!-- Date -->
       {{ post.date | default: "1900-01-01" | date: "%Y" }}.
+
     </p>
 
     {% if post.citation %}
