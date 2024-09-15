@@ -5,5 +5,6 @@ permalink: /publications/paper1
 date: 2024-09-11
 authors: 'Salim Azak, Fırat Bozkaya, Akif Durdu'
 journal: 'IEEE Robotics and Automation Letters'
+category: journal
 ---
 Makalenin özeti, indirme bağlantıları
