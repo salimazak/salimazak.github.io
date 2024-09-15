@@ -5,5 +5,6 @@ permalink: /publications/paper1
 date: 2024-08-08
 authors: 'Salim Azak, Fırat Bozkaya, Şükrücan Tığlıoğlu, Abdullah Yusefi, Akif Durdu'
 journal: 'IEEE Transactions on Intelligent Vehicles'
+category: journal
 ---
 Makalenin özeti, indirme bağlantıları 
