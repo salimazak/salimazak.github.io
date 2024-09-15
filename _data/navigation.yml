@@ -12,13 +12,13 @@ main:
     url: /aboutme/ 
     
   - title: "Publications"
-    url: /cv/
+    url: /publications/
 
   - title: "Talks"
     url: /talks/        
 
-  - title: "Projects"
-    url: /cv/
+  #- title: "Projects"
+  #  url: /cv/
 
   - title: "News"
     url: /news/
