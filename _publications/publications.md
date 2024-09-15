@@ -5,7 +5,7 @@ title: Publications
 
 ## Publications
 
-You can also find my articles on my [Google Scholar profile](https://scholar.google.com/).
+You can also find my articles on my [CV](https://salimazak.github.io/cv/).
 
 ### Transactions or Journal Articles
 
