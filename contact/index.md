@@ -1,9 +1,9 @@
 Salim Azak
 
-Middle East Technical University  
+Middle East Technical University (METU)  
 Civil Engineering Department  
 K2-215  
-Çankaya Ankara Türkiye  
+Çankaya, Ankara, Türkiye  
 
 Phone:+90 312 210 24 48  
 
