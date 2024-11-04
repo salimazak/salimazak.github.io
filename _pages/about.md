@@ -41,11 +41,13 @@ fetch('/_pages/tweets.json')
             tweetElement.className = 'tweet';
             tweetElement.innerHTML = `
                 <div class="tweet-header">
-                    <img src="https://abs.twimg.com/sticky/default_profile_images/default_profile_normal.png" alt="Profile Image">
-                    <span class="username">@salimazak</span>
+                    <img src="${tweet.profile_image_url}" alt="Profile Image" class="profile-image">
+                    <a href="https://twitter.com/${tweet.username}" target="_blank" class="username">@${tweet.username}</a>
+                    <span class="tweet-date">${new Date(tweet.created_at).toLocaleString()}</span>
                 </div>
-                <p>${formatText(tweet.text)}</p>
-                <small>${tweet.created_at ? new Date(tweet.created_at).toLocaleString() : 'Tarih bilgisi mevcut değil.'}</small>
+                <p>${tweet.text.replace(/(@\w+)/g, '<a href="https://twitter.com/$1" target="_blank">$1</a>')
+                               .replace(/(#\w+)/g, '<a href="https://twitter.com/hashtag/$1" target="_blank">$1</a>')
+                               .replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank">$1</a>')}</p>
             `;
             twitterFeed.appendChild(tweetElement);
         });
@@ -53,80 +55,47 @@ fetch('/_pages/tweets.json')
     .catch(error => {
         console.error('There was a problem with the fetch operation:', error);
     });
-
-function formatText(text) {
-    return text.replace(/(@\w+)/g, '<a href="https://twitter.com/$1" target="_blank">$&</a>')
-               .replace(/(#\w+)/g, '<a href="https://twitter.com/hashtag/$1" target="_blank">$&</a>')
-               .replace(/(https?:\/\/[^\s]+)/g, '<a href="$&" target="_blank">$&</a>');
-}
 </script>
 
 <style>
-    #twitter-feed-container {
+    #twitter-feed {
         max-width: 600px;
         margin: 0 auto;
         font-family: Arial, sans-serif;
-        border: 1px solid #e1e8ed;
-        border-radius: 10px;
-        background-color: #ffffff;
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    }
-    .twitter-feed-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px;
-        background-color: #1da1f2;
-        color: #ffffff;
-        font-weight: bold;
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
-    }
-    .twitter-feed-header .follow-button {
-        background-color: #000;
-        color: #fff;
-        padding: 5px 10px;
-        border-radius: 15px;
-        text-decoration: none;
-        font-size: 12px;
-        font-weight: bold;
-    }
-    .twitter-feed-header .follow-button:hover {
-        background-color: #333;
-    }
-    #twitter-feed {
-        padding: 10px;
     }
     .tweet {
-        border-bottom: 1px solid #e1e8ed;
-        padding: 10px 0;
-    }
-    .tweet:last-child {
-        border-bottom: none;
+        border: 1px solid #e1e8ed;
+        border-radius: 5px;
+        padding: 10px;
+        margin: 10px 0;
+        background-color: #f5f8fa;
     }
     .tweet-header {
         display: flex;
         align-items: center;
-        margin-bottom: 8px;
+        margin-bottom: 5px;
     }
-    .tweet-header img {
+    .profile-image {
         width: 40px;
         height: 40px;
         border-radius: 50%;
         margin-right: 10px;
     }
-    .tweet-header .username {
+    .username {
         font-weight: bold;
-        color: #1da1f2;
+        color: #1DA1F2;
+        text-decoration: none;
+        margin-right: 10px;
+    }
+    .username:hover {
+        text-decoration: underline;
+    }
+    .tweet-date {
+        color: #657786;
+        font-size: 0.9em;
     }
     .tweet p {
         margin: 0;
-        font-size: 14px;
-        color: #333333;
-    }
-    .tweet small {
-        color: #657786;
-        font-size: 12px;
     }
 </style>
 
