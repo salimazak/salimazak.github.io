@@ -17,15 +17,7 @@
     
     <p>
       {% if post.authors %}
-        {% assign authors_array = post.authors | split: ', ' %}
-        {% assign formatted_authors = '' %}
-        {% for author in authors_array %}
-          {% assign name_parts = author | split: ' ' %}
-          {% assign initials = name_parts[0] | slice: 0, 1 %}
-          {% assign last_name = name_parts | last %}
-          {% assign formatted_authors = formatted_authors | append: initials | append: '. ' | append: last_name | append: ', ' %}
-        {% endfor %}
-        {{ formatted_authors | slice: 0, formatted_authors.size | minus: 2 }}{% comment %} Remove last comma and space {% endcomment %}
+        {{ post.authors }},
       {% endif %}
 
       <!-- Title -->
@@ -38,29 +30,10 @@
         in <i>{{ post.conference }}</i>
       {% endif %}
 
-      <!-- Conditional Volume, Issue, and Pages with Labels -->
-      {% assign has_volume_or_issue_or_pages = false %}
-  
-      {% if post.volume %}
-        {% assign has_volume_or_issue_or_pages = true %}
-        , vol. {{ post.volume }}
-      {% endif %}
-  
-      {% if post.issue %}
-        {% assign has_volume_or_issue_or_pages = true %}
-        {% if post.volume %}, {% endif %}no. {{ post.issue }}
-      {% endif %}
-  
-    {% if post.pages %}
-      {% assign has_volume_or_issue_or_pages = true %}
-      {% if post.volume or post.issue %}, {% endif %}pp. {{ post.pages }}
-    {% endif %}
-
-      <!-- Only show if there were any volume, issue, or page numbers -->
-      {% if has_volume_or_issue_or_pages %}
-        {% comment %} Only display if at least one is present {% endcomment %}
-          {{ '' | append: ', ' }}{% if post.volume %} vol. {{ post.volume }}{% endif %}{% if post.issue %}no. {{ post.issue }}{% endif %}{% if post.pages %}pp. {{ post.pages }}{% endif %}
-      {% endif %}
+      <!-- Volume, Issue, and Pages -->
+      {% if post.volume %}, vol. {{ post.volume }}{% endif %}
+      {% if post.issue %}, no. {{ post.issue }}{% endif %}
+      {% if post.pages %}, pp. {{ post.pages }}{% endif %}
       
       <!-- Year -->
       {% if post.date %} {{ post.date | date: "%Y" }}{% endif %}
