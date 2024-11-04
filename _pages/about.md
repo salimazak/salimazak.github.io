@@ -55,9 +55,9 @@ fetch('/_pages/tweets.json')
     });
 
 function formatText(text) {
-    return text.replace(/(@\w+)/g, '<a href="https://twitter.com/$1" target="_blank">$1</a>')
-               .replace(/(#\w+)/g, '<a href="https://twitter.com/hashtag/$1" target="_blank">$1</a>')
-               .replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank">$1</a>');
+    return text.replace(/(@\w+)/g, '<a href="https://twitter.com/$1" target="_blank">$&</a>')
+               .replace(/(#\w+)/g, '<a href="https://twitter.com/hashtag/$1" target="_blank">$&</a>')
+               .replace(/(https?:\/\/[^\s]+)/g, '<a href="$&" target="_blank">$&</a>');
 }
 </script>
 
