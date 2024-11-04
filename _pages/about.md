@@ -34,8 +34,15 @@ fetch('/_pages/tweets.json')
             const tweetElement = document.createElement('div');
             tweetElement.className = 'tweet';
             tweetElement.innerHTML = `
-                <p>${tweet.text}</p>
+                <div class="tweet-header">
+                    <img src="https://abs.twimg.com/sticky/default_profile_images/default_profile_normal.png" alt="Profile Image">
+                    <span class="username">@salimazak</span>
+                </div>
+                <p>${formatText(tweet.text)}</p>
                 <small>${tweet.created_at ? new Date(tweet.created_at).toLocaleString() : 'Tarih bilgisi mevcut değil.'}</small>
+                <div class="tweet-footer">
+                    <a href="https://twitter.com/salimazak" target="_blank">Follow @salimazak on X</a>
+                </div>
             `;
             twitterFeed.appendChild(tweetElement);
         });
@@ -43,6 +50,12 @@ fetch('/_pages/tweets.json')
     .catch(error => {
         console.error('There was a problem with the fetch operation:', error);
     });
+
+function formatText(text) {
+    return text.replace(/(@\w+)/g, '<a href="https://twitter.com/$1" target="_blank">$1</a>')
+               .replace(/(#\w+)/g, '<a href="https://twitter.com/hashtag/$1" target="_blank">$1</a>')
+               .replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank">$1</a>');
+}
 </script>
 
 <style>
@@ -53,16 +66,47 @@ fetch('/_pages/tweets.json')
     }
     .tweet {
         border: 1px solid #e1e8ed;
-        border-radius: 5px;
+        border-radius: 10px;
         padding: 10px;
         margin: 10px 0;
-        background-color: #f5f8fa;
+        background-color: #ffffff;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .tweet-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 8px;
+    }
+    .tweet-header img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin-right: 10px;
+    }
+    .tweet-header .username {
+        font-weight: bold;
+        color: #1da1f2;
     }
     .tweet p {
         margin: 0;
+        font-size: 14px;
+        color: #333333;
     }
     .tweet small {
         color: #657786;
+        font-size: 12px;
+    }
+    .tweet-footer {
+        margin-top: 8px;
+        font-size: 12px;
+        color: #8899a6;
+    }
+    .tweet-footer a {
+        color: #1da1f2;
+        text-decoration: none;
+    }
+    .tweet-footer a:hover {
+        text-decoration: underline;
     }
 </style>
 
