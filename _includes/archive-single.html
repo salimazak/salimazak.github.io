@@ -21,7 +21,7 @@
       {% endif %}
 
       <!-- Title -->
-      "{{ title }}," 
+      "<a href="https://doi.org/{{ post.doi }}">{{ title }}</a>", 
 
       <!-- Journal or Conference -->
       {% if post.category == 'journal' %}
@@ -39,7 +39,7 @@
       {% if post.date %} {{ post.date | date: "%Y" }}{% endif %}
 
       <!-- DOI -->
-      {% if post.doi %}, doi: <a href="https://doi.org/{{ post.doi }}">{{ post.doi }}</a>{% endif %}.
+      {% if post.doi %}, doi: {{ post.doi }}{% endif %}.
     </p>
 
     {% if post.citation %}
