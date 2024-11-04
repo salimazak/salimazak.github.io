@@ -27,46 +27,77 @@ Dr. Azak is also an Associate Editor at [IEEE Robotics and Automation Letters (R
 </div>
 
 <script>
-async function fetchTweets() {
-    const response = await fetch('tweets.json');
-    const tweets = await response.json();
-
-    const tweetContainer = document.getElementById('twitter-feed');
-    tweetContainer.innerHTML = '';
-
-    tweets.forEach(tweet => {
-        const tweetDate = new Date(tweet.created_at);
-        const formattedDate = tweetDate.toLocaleString('en-US', {
-            month: 'short', day: 'numeric', year: 'numeric',
-            hour: 'numeric', minute: 'numeric', hour12: true
-        });
-
-        const tweetHtml = `
-            <div class="tweet-container">
+fetch('/_pages/tweets.json')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(data => {
+        const twitterFeed = document.getElementById('twitter-feed');
+        data.forEach(tweet => {
+            const tweetElement = document.createElement('div');
+            tweetElement.className = 'tweet';
+            tweetElement.innerHTML = `
                 <div class="tweet-header">
-                    <img src="profile.jpg" alt="Profile Photo">
-                    <span class="username">@salimazak</span>
-                    <span class="date">${formattedDate}</span>
+                    <img src="${tweet.profile_image_url}" alt="Profile Image" class="profile-image">
+                    <a href="https://twitter.com/${tweet.username}" target="_blank" class="username">@${tweet.username}</a>
+                    <span class="tweet-date">${new Date(tweet.created_at).toLocaleString()}</span>
                 </div>
-                <div class="tweet-content">
-                    ${formatTweetContent(tweet.text)}
-                </div>
-            </div>
-        `;
-        tweetContainer.innerHTML += tweetHtml;
+                <p>${tweet.text.replace(/(@\w+)/g, '<a href="https://twitter.com/$1" target="_blank">$1</a>')
+                               .replace(/(#\w+)/g, '<a href="https://twitter.com/hashtag/$1" target="_blank">$1</a>')
+                               .replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank">$1</a>')}</p>
+            `;
+            twitterFeed.appendChild(tweetElement);
+        });
+    })
+    .catch(error => {
+        console.error('There was a problem with the fetch operation:', error);
     });
-}
-
-function formatTweetContent(text) {
-    return text
-        .replace(/(@\w+)/g, '<span class="username">$1</span>')
-        .replace(/(#\w+)/g, '<span class="hashtag">$1</span>')
-        .replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank">$1</a>')
-        .replace(/\n/g, '<br>');
-}
-
-fetchTweets();
 </script>
+
+<style>
+    #twitter-feed {
+        max-width: 600px;
+        margin: 0 auto;
+        font-family: Arial, sans-serif;
+    }
+    .tweet {
+        border: 1px solid #e1e8ed;
+        border-radius: 5px;
+        padding: 10px;
+        margin: 10px 0;
+        background-color: #f5f8fa;
+    }
+    .tweet-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 5px;
+    }
+    .profile-image {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin-right: 10px;
+    }
+    .username {
+        font-weight: bold;
+        color: #1DA1F2;
+        text-decoration: none;
+        margin-right: 10px;
+    }
+    .username:hover {
+        text-decoration: underline;
+    }
+    .tweet-date {
+        color: #657786;
+        font-size: 0.9em;
+    }
+    .tweet p {
+        margin: 0;
+    }
+</style>
 
 <style>
     #twitter-feed {
