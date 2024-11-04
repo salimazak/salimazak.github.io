@@ -29,21 +29,21 @@
 
       <!-- Journal or Conference -->
       {% if post.category == 'journal' %}
-      <i>{{ post.journal }}</i>,
+        <i>{{ post.journal }}</i>{% if post.volume or post.issue or post.pages or post.date %},{% endif %}
       {% elsif post.category == 'conference' %}
-        in <i>{{ post.conference }}</i>,
+        in <i>{{ post.conference }}</i>{% if post.pages or post.date %},{% endif %}
       {% endif %}
 
-      <!-- Volume, Issue, and Pages -->
-      {% if post.volume %}, vol. {{ post.volume }}, {% endif %}
-      {% if post.issue %}, no. {{ post.issue }}, {% endif %}
-      {% if post.pages %}, pp. {{ post.pages }}, {% endif %}
-      
-      <!-- Year -->
-      {% if post.date %} {{ post.date | date: "%Y" }}, {% endif %}
+      <!-- Volume, Issue, and Pages with Conditional Commas -->
+      {% if post.volume %} vol. {{ post.volume }}{% if post.issue or post.pages %},{% endif %}{% endif %}
+      {% if post.issue %} no. {{ post.issue }}{% if post.pages %},{% endif %}{% endif %}
+      {% if post.pages %} pp. {{ post.pages }}{% endif %}
 
-      <!-- DOI -->
-      {% if post.doi %}, doi: {{ post.doi }}{% endif %}.
+      <!-- Year with Conditional Comma if DOI Exists -->
+      {% if post.date %}{{ post.date | date: "%Y" }}{% if post.doi %},{% endif %}{% endif %}
+
+      <!-- DOI as Text if Available -->
+      {% if post.doi %} doi: {{ post.doi }}{% endif %}.
     </p>
 
     {% if post.citation %}
