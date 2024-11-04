@@ -14,7 +14,7 @@ fetch('/_pages/tweets.json')
             const tweetElement = document.createElement('div');
             tweetElement.className = 'tweet';
             tweetElement.innerHTML = `
-                <p>${tweet.text}</p>
+                <p>${formatTweetText(tweet.text)}</p>
                 <small>${tweet.created_at ? new Date(tweet.created_at).toLocaleString() : 'Tarih bilgisi mevcut değil.'}</small>
             `;
             twitterFeed.appendChild(tweetElement);
@@ -23,4 +23,12 @@ fetch('/_pages/tweets.json')
     .catch(error => {
         console.error('There was a problem with the fetch operation:', error);
     });
+
+// Tweet metnindeki kullanıcı adlarını ve linkleri işleyen fonksiyon
+function formatTweetText(text) {
+    // Kullanıcı adlarını ve linkleri tıklanabilir hale getir
+    return text
+        .replace(/@(\w+)/g, '<a href="https://twitter.com/$1" target="_blank">@$1</a>') // @kullanici
+        .replace(/https?:\/\/[^\s]+/g, '<a href="$&" target="_blank">$&</a>'); // linkler
+}
 </script>
