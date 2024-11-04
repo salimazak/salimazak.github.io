@@ -21,7 +21,7 @@
       {% endif %}
 
       <!-- Title -->
-      "<strong>{{ title }}</strong>," 
+      "{{ title }}," 
 
       <!-- Journal or Conference -->
       {% if post.category == 'journal' %}
@@ -30,13 +30,13 @@
         in <i>{{ post.conference }}</i>
       {% endif %}
 
-      <!-- Year -->
-      {% if post.date %} {{ post.date | date: "%Y" }}{% endif %}
-
       <!-- Conditional Volume, Issue, and Pages with Labels -->
       {% if post.volume %}, vol. {{ post.volume }}{% endif %}
       {% if post.issue %}{% if post.volume %}, {% endif %}no. {{ post.issue }}{% endif %}
       {% if post.pages %}{% if post.volume or post.issue %}, {% endif %}pp. {{ post.pages }}{% endif %}
+
+      <!-- Year -->
+      {% if post.date %} {{ post.date | date: "%Y" }}{% endif %}
 
       <!-- DOI -->
       {% if post.doi %}, doi: <a href="https://doi.org/{{ post.doi }}">{{ post.doi }}</a>{% endif %}.
