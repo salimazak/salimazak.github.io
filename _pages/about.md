@@ -20,7 +20,7 @@ Dr. Azak is also an Associate Editor at [IEEE Robotics and Automation Letters (R
 
 <div id="twitter-feed-container">
     <div class="twitter-feed-header">
-        <span>Posts from @salimazak</span>
+        <span>Posts from <a href="https://twitter.com/salimazak" target="_blank">@salimazak</a></span>
         <a href="https://twitter.com/salimazak" target="_blank" class="follow-button">Follow on X</a>
     </div>
     <div id="twitter-feed"></div>
