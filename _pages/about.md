@@ -27,34 +27,46 @@ Dr. Azak is also an Associate Editor at [IEEE Robotics and Automation Letters (R
 </div>
 
 <script>
-fetch('/_pages/tweets.json')
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        return response.json();
-    })
-    .then(data => {
-        const twitterFeed = document.getElementById('twitter-feed');
-        data.forEach(tweet => {
-            const tweetElement = document.createElement('div');
-            tweetElement.className = 'tweet';
-            tweetElement.innerHTML = `
-                <div class="tweet-header">
-                    <img src="${tweet.profile_image_url}" alt="Profile Image" class="profile-image">
-                    <a href="https://twitter.com/${tweet.username}" target="_blank" class="username">@${tweet.username}</a>
-                    <span class="tweet-date">${new Date(tweet.created_at).toLocaleString()}</span>
-                </div>
-                <p>${tweet.text.replace(/(@\w+)/g, '<a href="https://twitter.com/$1" target="_blank">$1</a>')
-                               .replace(/(#\w+)/g, '<a href="https://twitter.com/hashtag/$1" target="_blank">$1</a>')
-                               .replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank">$1</a>')}</p>
-            `;
-            twitterFeed.appendChild(tweetElement);
+async function fetchTweets() {
+    const response = await fetch('tweets.json');
+    const tweets = await response.json();
+
+    const tweetContainer = document.getElementById('twitter-feed');
+    tweetContainer.innerHTML = '';
+
+    tweets.forEach(tweet => {
+        const tweetDate = new Date(tweet.created_at);
+        const formattedDate = tweetDate.toLocaleString('en-US', {
+            month: 'short', day: 'numeric', year: 'numeric',
+            hour: 'numeric', minute: 'numeric', hour12: true
         });
-    })
-    .catch(error => {
-        console.error('There was a problem with the fetch operation:', error);
+
+        const tweetHtml = `
+            <div class="tweet-container">
+                <div class="tweet-header">
+                    <img src="profile.jpg" alt="Profile Photo">
+                    <span class="username">@salimazak</span>
+                    <span class="date">${formattedDate}</span>
+                </div>
+                <div class="tweet-content">
+                    ${formatTweetContent(tweet.text)}
+                </div>
+            </div>
+        `;
+        tweetContainer.innerHTML += tweetHtml;
     });
+}
+
+function formatTweetContent(text) {
+    // Satır başlarını koruyarak hashtag'leri mavi renkte gösterecek şekilde formatla
+    return text
+        .replace(/(@\w+)/g, '<span class="username">$1</span>')
+        .replace(/(#\w+)/g, '<span class="hashtag">$1</span>')
+        .replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank">$1</a>')
+        .replace(/\n/g, '<br>'); // Satır başı koruma
+}
+
+fetchTweets();
 </script>
 
 <style>
