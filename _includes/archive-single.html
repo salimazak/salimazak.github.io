@@ -30,6 +30,9 @@
         in <i>{{ post.conference }}</i>
       {% endif %}
 
+      <!-- Year -->
+      {% if post.date %} {{ post.date | date: "%Y" }}{% endif %}
+
       <!-- Conditional Volume, Issue, and Pages -->
       {% if post.volume or post.issue or post.pages %}
         {% if post.volume %}, vol. {{ post.volume }}{% endif %}
