@@ -32,3 +32,31 @@ function formatTweetText(text) {
         .replace(/https?:\/\/[^\s]+/g, '<a href="$&" target="_blank">$&</a>'); // linkler
 }
 </script>
+
+<style>
+    #twitter-feed {
+        max-width: 600px;
+        margin: 0 auto;
+        font-family: Arial, sans-serif;
+    }
+    .tweet {
+        border: 1px solid #e1e8ed;
+        border-radius: 5px;
+        padding: 10px;
+        margin: 10px 0;
+        background-color: #f5f8fa;
+    }
+    .tweet p {
+        margin: 0;
+    }
+    .tweet small {
+        color: #657786;
+    }
+    .tweet a {
+        color: #1da1f2; /* Twitter mavi rengi */
+        text-decoration: none;
+    }
+    .tweet a:hover {
+        text-decoration: underline;
+    }
+</style>
