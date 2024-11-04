@@ -29,18 +29,18 @@
 
       <!-- Journal or Conference -->
       {% if post.category == 'journal' %}
-      <i>{{ post.journal }}</i>
+      <i>{{ post.journal }}</i>,
       {% elsif post.category == 'conference' %}
-        in <i>{{ post.conference }}</i>
+        in <i>{{ post.conference }}</i>,
       {% endif %}
 
       <!-- Volume, Issue, and Pages -->
-      {% if post.volume %}, vol. {{ post.volume }}{% endif %}
-      {% if post.issue %}, no. {{ post.issue }}{% endif %}
-      {% if post.pages %}, pp. {{ post.pages }}{% endif %}
+      {% if post.volume %}, vol. {{ post.volume }}, {% endif %}
+      {% if post.issue %}, no. {{ post.issue }}, {% endif %}
+      {% if post.pages %}, pp. {{ post.pages }}, {% endif %}
       
       <!-- Year -->
-      {% if post.date %} {{ post.date | date: "%Y" }}{% endif %}
+      {% if post.date %} {{ post.date | date: "%Y" }}, {% endif %}
 
       <!-- DOI -->
       {% if post.doi %}, doi: {{ post.doi }}{% endif %}.
