@@ -17,7 +17,13 @@
     
     <p>
       {% if post.authors %}
-        {{ post.authors | split: ', ' | map: 'first_letter' | join: ', ' }}{% comment %} Yazar isimlerini baş harfleriyle göster {% endcomment %}
+        {% assign authors_array = post.authors | split: ', ' %}
+        {% assign initials_array = '' %}
+        {% for author in authors_array %}
+        {% assign initials = author | slice: 0, 1 %}
+        {% assign initials_array = initials_array | append: initials | append: '. ' %}
+        {% endfor %}
+        {{ initials_array | strip }}{% comment %} Yazar isimlerini baş harfleriyle göster {% endcomment %}
       {% endif %}
 
       <!-- Title -->
