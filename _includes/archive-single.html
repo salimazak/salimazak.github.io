@@ -25,7 +25,10 @@
           {% assign last_name = name_parts[1] %}
           {% assign formatted_authors = formatted_authors | append: initials | append: '. ' | append: last_name | append: ', ' %}
         {% endfor %}
-        {{ formatted_authors | slice: 0, formatted_authors.size | minus: 2 }}{% comment %} Remove last comma and space {% endcomment %}
+        {% if formatted_authors.size > 0 %}
+          {% assign formatted_authors = formatted_authors | slice: 0, formatted_authors.size | minus: 2 %} {% comment %} Remove last comma and space {% endcomment %}
+        {% endif %}
+        {{ formatted_authors }}{% comment %} Display formatted authors {% endcomment %}
       {% endif %}
 
       <!-- Title -->
@@ -40,15 +43,34 @@
 
       <!-- Conditional Volume, Issue, and Pages with Labels -->
       {% assign has_volume_or_issue_or_pages = false %}
-      {% if post.volume %}{% assign has_volume_or_issue_or_pages = true %}{% endif %}
-      {% if post.issue %}{% assign has_volume_or_issue_or_pages = true %}{% endif %}
-      {% if post.pages %}{% assign has_volume_or_issue_or_pages = true %}{% endif %}
   
-      {% if has_volume_or_issue_or_pages %}
-        {% if post.volume %}, vol. {{ post.volume }}{% endif %}
-        {% if post.issue %}{% if post.volume %}, {% endif %}no. {{ post.issue }}{% endif %}
-        {% if post.pages %}{% if post.volume or post.issue %}, {% endif %}pp. {{ post.pages }}{% endif %}
+      {% if post.volume %}
+        {% assign has_volume_or_issue_or_pages = true %}
+        , vol. {{ post.volume }}
       {% endif %}
+  
+      {% if post.issue %}
+        {% assign has_volume_or_issue_or_pages = true %}
+        {% if post.volume %}, {% endif %}no. {{ post.issue }}
+      {% endif %}
+  
+    {% if post.pages %}
+      {% assign has_volume_or_issue_or_pages = true %}
+      {% if post.volume or post.issue %}, {% endif %}pp. {{ post.pages }}
+    {% endif %}
+
+    {% if has_volume_or_issue_or_pages %}
+      {% comment %} Only display the volume, issue, and pages if at least one is present {% endcomment %}
+    {% else %}
+      {% assign empty_volume_issue_pages = true %}
+    {% endif %}
+
+    {% if empty_volume_issue_pages == false %}
+      <!-- Only show if there were any volume, issue, or page numbers -->
+      {% if post.volume or post.issue or post.pages %}
+        , {% if post.volume %} vol. {{ post.volume }} {% endif %}{% if post.issue %}no. {{ post.issue }} {% endif %}{% if post.pages %}pp. {{ post.pages }} {% endif %}
+      {% endif %}
+    {% endif %}
       
       <!-- Year -->
       {% if post.date %} {{ post.date | date: "%Y" }}{% endif %}
