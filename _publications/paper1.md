@@ -1,6 +1,6 @@
 ---
 title: "A Unified Monocular Vision-Based Driving Model for Autonomous Vehicles with Multi-Task Capabilities"
-authors: 'Salim Azak, Fırat Bozkaya, Şükrücan Tığlıoğlu, Abdullah Yusefi, Akif Durdu'
+authors: 'S. Azak, F. Bozkaya, Ş. Tığlıoğlu, A. Yusefi, A. Durdu'
 category: journal
 journal: 'IEEE Transactions on Intelligent Vehicles'
 date: 2024-09-17
