@@ -17,22 +17,26 @@
     
     <p>
       {% if post.authors %}
-        {{ post.authors }}, 
+        {{ post.authors }},
       {% endif %}
-      
+
       <!-- Title -->
-      <strong>{{ title }}</strong>, 
+      "<strong>{{ title }}</strong>," 
 
-      <!-- Venue Conditional Logic -->
+      <!-- Journal or Conference -->
       {% if post.category == 'journal' %}
-        <i>{{ post.journal }}</i>,
+        <i>{{ post.journal }}</i>
       {% elsif post.category == 'conference' %}
-        <i>{{ post.conference }}</i>,
+        <i>{{ post.conference }}</i>
       {% endif %}
-      
-      <!-- Date -->
-      {{ post.date | default: "1900-01-01" | date: "%Y" }}.
 
+      <!-- Volume, Issue, and Pages -->
+      {% if post.volume %}, vol. {{ post.volume }}{% endif %}
+      {% if post.issue %}, no. {{ post.issue }}{% endif %}
+      {% if post.pages %}, pp. {{ post.pages }}{% endif %}
+
+      <!-- DOI -->
+      {% if post.doi %}, doi: <a href="https://doi.org/{{ post.doi }}">{{ post.doi }}</a>{% endif %}.
     </p>
 
     {% if post.citation %}
