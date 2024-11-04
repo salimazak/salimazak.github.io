@@ -3,7 +3,7 @@ title: "RapidSense: A Diverse and Multi-modal Autonomous Driving Dataset- (In Pr
 collection: publications
 permalink: /publications/paper1
 date: 2024-07-11
-authors: 'Salim Azak, Fırat Bozkaya, Akif Durdu'
+authors: 'S. Azak, F. Bozkaya, A. Durdu'
 journal: 'IEEE Robotics and Automation Letters'
 category: journal
 ---
