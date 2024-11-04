@@ -42,6 +42,33 @@
     text-decoration: none;
 }
 
+#twitter-feed-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 600px;
+    margin: 0 auto 10px;
+    font-family: Arial, sans-serif;
+}
+
+#twitter-feed-container a {
+    text-decoration: none;
+    color: #1DA1F2;
+}
+
+.follow-button {
+    background-color: #000;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.follow-button:hover {
+    background-color: #333;
+}
 .tweet-footer a:hover {
     text-decoration: underline;
 }
