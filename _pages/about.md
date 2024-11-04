@@ -18,6 +18,35 @@ Dr. Azak is also an Associate Editor at [IEEE Robotics and Automation Letters (R
 <!--# News-->
 <!--{% include twitter-timeline.html %}-->
 
+<div id="tweets"></div>
+
+<script>
+  fetch('/_pages/tweets.json')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then(data => {
+      const tweetsContainer = document.getElementById('tweets');
+      data.forEach(tweet => {
+        const tweetElement = document.createElement('div');
+        tweetElement.innerHTML = `
+          <p><strong>${tweet.user.name}</strong>: ${tweet.text}</p>
+          <p><small>${new Date(tweet.created_at).toLocaleString()}</small></p>
+          <hr>
+        `;
+        tweetsContainer.appendChild(tweetElement);
+      });
+    })
+    .catch(error => {
+      console.error('There was a problem with the fetch operation:', error);
+      const tweetsContainer = document.getElementById('tweets');
+      tweetsContainer.innerHTML = '<p>Tweetleri yüklerken bir hata oluştu.</p>';
+    });
+</script>
+
 
 <!--A data-driven personal website
 ======
