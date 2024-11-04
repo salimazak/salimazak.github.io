@@ -6,10 +6,10 @@ journal: 'IEEE Robotics and Automation Letters'
 date: 2024-07-11
 collection: publications
 permalink: /publications/paper1
-volume: ''
+<!--volume: ''
 issue: ''
 pages: ''
-doi: ''
+doi: ''--> 
 
 ---
 <!--Makalenin özeti, indirme bağlantıları-->
