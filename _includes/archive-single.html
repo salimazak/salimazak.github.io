@@ -22,13 +22,10 @@
         {% for author in authors_array %}
           {% assign name_parts = author | split: ' ' %}
           {% assign initials = name_parts[0] | slice: 0, 1 %}
-          {% assign last_name = name_parts[1] %}
+          {% assign last_name = name_parts | last %}
           {% assign formatted_authors = formatted_authors | append: initials | append: '. ' | append: last_name | append: ', ' %}
         {% endfor %}
-        {% if formatted_authors.size > 0 %}
-          {% assign formatted_authors = formatted_authors | slice: 0, formatted_authors.size | minus: 2 %} {% comment %} Remove last comma and space {% endcomment %}
-        {% endif %}
-        {{ formatted_authors }}{% comment %} Display formatted authors {% endcomment %}
+        {{ formatted_authors | slice: 0, formatted_authors.size | minus: 2 }}{% comment %} Remove last comma and space {% endcomment %}
       {% endif %}
 
       <!-- Title -->
@@ -59,18 +56,11 @@
       {% if post.volume or post.issue %}, {% endif %}pp. {{ post.pages }}
     {% endif %}
 
-    {% if has_volume_or_issue_or_pages %}
-      {% comment %} Only display the volume, issue, and pages if at least one is present {% endcomment %}
-    {% else %}
-      {% assign empty_volume_issue_pages = true %}
-    {% endif %}
-
-    {% if empty_volume_issue_pages == false %}
       <!-- Only show if there were any volume, issue, or page numbers -->
-      {% if post.volume or post.issue or post.pages %}
-        , {% if post.volume %} vol. {{ post.volume }} {% endif %}{% if post.issue %}no. {{ post.issue }} {% endif %}{% if post.pages %}pp. {{ post.pages }} {% endif %}
+      {% if has_volume_or_issue_or_pages %}
+        {% comment %} Only display if at least one is present {% endcomment %}
+          {{ '' | append: ', ' }}{% if post.volume %} vol. {{ post.volume }}{% endif %}{% if post.issue %}no. {{ post.issue }}{% endif %}{% if post.pages %}pp. {{ post.pages }}{% endif %}
       {% endif %}
-    {% endif %}
       
       <!-- Year -->
       {% if post.date %} {{ post.date | date: "%Y" }}{% endif %}
