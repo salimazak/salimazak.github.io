@@ -16,7 +16,7 @@ Dr. Azak is also an Associate Editor at [IEEE Robotics and Automation Letters (R
 <a class="twitter-follow-button" href="https://twitter.com/salimazak">Follow @salimazak</a> <span>for featured papers about Robotics and Computer Vision and flagship conferences (CVPR, ICCV, ECCV, BMVC, ICRA, IROS, NeurIPS, ICLR, ICML, WACV) of our community!</span>  
 
 <!--# News-->
-{% include twitter-timeline.html %}
+<!--{% include twitter-timeline.html %}-->
 
 
 <!--A data-driven personal website
