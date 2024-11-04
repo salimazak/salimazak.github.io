@@ -58,12 +58,11 @@ async function fetchTweets() {
 }
 
 function formatTweetContent(text) {
-    // Satır başlarını koruyarak hashtag'leri mavi renkte gösterecek şekilde formatla
     return text
         .replace(/(@\w+)/g, '<span class="username">$1</span>')
         .replace(/(#\w+)/g, '<span class="hashtag">$1</span>')
         .replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank">$1</a>')
-        .replace(/\n/g, '<br>'); // Satır başı koruma
+        .replace(/\n/g, '<br>');
 }
 
 fetchTweets();
