@@ -17,9 +17,13 @@ classes: no-sidebar
 
 # News
 
-- ### Announcement: Associate Editor Position at IEEE Robotics and Automation Letters (RA-L)
+- ### Associate Editor Position at IEEE Robotics and Automation Letters (RA-L)
 
   I have been appointed as an Associate Editor for the [IEEE Robotics and Automation Letters (RA-L)](https://www.ieee-ras.org/publications/ra-l).
+
+- ### Paper Accepted at IEEE Transactions on Intelligent Vehicles
+
+  Our paper titled "[A Unified Monocular Vision-Based Driving Model for Autonomous Vehicles with Multi-Task Capabilities]([https://tok2024.ktun.edu.tr](https://ieeexplore.ieee.org/document/10721282))" has been accepted for publication in IEEE Transactions on Intelligent Vehicles (T-IV)!.
 
 - ### Paper Accepted at TOK2024 Conference
 
