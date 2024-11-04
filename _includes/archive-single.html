@@ -33,12 +33,10 @@
       <!-- Year -->
       {% if post.date %} {{ post.date | date: "%Y" }}{% endif %}
 
-      <!-- Conditional Volume, Issue, and Pages -->
-      {% if post.volume or post.issue or post.pages %}
-        {% if post.volume %}, vol. {{ post.volume }}{% endif %}
-        {% if post.issue %}, no. {{ post.issue }}{% endif %}
-        {% if post.pages %}, pp. {{ post.pages }}{% endif %}
-      {% endif %}
+      <!-- Conditional Volume, Issue, and Pages with Labels -->
+      {% if post.volume %}, vol. {{ post.volume }}{% endif %}
+      {% if post.issue %}{% if post.volume %}, {% endif %}no. {{ post.issue }}{% endif %}
+      {% if post.pages %}{% if post.volume or post.issue %}, {% endif %}pp. {{ post.pages }}{% endif %}
 
       <!-- DOI -->
       {% if post.doi %}, doi: <a href="https://doi.org/{{ post.doi }}">{{ post.doi }}</a>{% endif %}.
