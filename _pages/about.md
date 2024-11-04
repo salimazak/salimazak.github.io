@@ -18,7 +18,13 @@ Dr. Azak is also an Associate Editor at [IEEE Robotics and Automation Letters (R
 <!--# News-->
 {% include twitter-timeline.html %}
 
-<div id="twitter-feed"></div>
+<div id="twitter-feed-container">
+    <div class="twitter-feed-header">
+        <span>Posts from @salimazak</span>
+        <a href="https://twitter.com/salimazak" target="_blank" class="follow-button">Follow on X</a>
+    </div>
+    <div id="twitter-feed"></div>
+</div>
 
 <script>
 fetch('/_pages/tweets.json')
@@ -40,9 +46,6 @@ fetch('/_pages/tweets.json')
                 </div>
                 <p>${formatText(tweet.text)}</p>
                 <small>${tweet.created_at ? new Date(tweet.created_at).toLocaleString() : 'Tarih bilgisi mevcut değil.'}</small>
-                <div class="tweet-footer">
-                    <a href="https://twitter.com/salimazak" target="_blank">Follow @salimazak on X</a>
-                </div>
             `;
             twitterFeed.appendChild(tweetElement);
         });
@@ -59,18 +62,47 @@ function formatText(text) {
 </script>
 
 <style>
-    #twitter-feed {
+    #twitter-feed-container {
         max-width: 600px;
         margin: 0 auto;
         font-family: Arial, sans-serif;
-    }
-    .tweet {
         border: 1px solid #e1e8ed;
         border-radius: 10px;
-        padding: 10px;
-        margin: 10px 0;
         background-color: #ffffff;
         box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .twitter-feed-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        background-color: #1da1f2;
+        color: #ffffff;
+        font-weight: bold;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+    .twitter-feed-header .follow-button {
+        background-color: #000;
+        color: #fff;
+        padding: 5px 10px;
+        border-radius: 15px;
+        text-decoration: none;
+        font-size: 12px;
+        font-weight: bold;
+    }
+    .twitter-feed-header .follow-button:hover {
+        background-color: #333;
+    }
+    #twitter-feed {
+        padding: 10px;
+    }
+    .tweet {
+        border-bottom: 1px solid #e1e8ed;
+        padding: 10px 0;
+    }
+    .tweet:last-child {
+        border-bottom: none;
     }
     .tweet-header {
         display: flex;
@@ -95,18 +127,6 @@ function formatText(text) {
     .tweet small {
         color: #657786;
         font-size: 12px;
-    }
-    .tweet-footer {
-        margin-top: 8px;
-        font-size: 12px;
-        color: #8899a6;
-    }
-    .tweet-footer a {
-        color: #1da1f2;
-        text-decoration: none;
-    }
-    .tweet-footer a:hover {
-        text-decoration: underline;
     }
 </style>
 
