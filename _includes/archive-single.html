@@ -17,7 +17,7 @@
     
     <p>
       {% if post.authors %}
-        {{ post.authors }},
+        {{ post.authors | split: ', ' | map: 'first_letter' | join: ', ' }}{% comment %} Yazar isimlerini baş harfleriyle göster {% endcomment %}
       {% endif %}
 
       <!-- Title -->
@@ -31,9 +31,11 @@
       {% endif %}
 
       <!-- Conditional Volume, Issue, and Pages with Labels -->
-      {% if post.volume %}, vol. {{ post.volume }}{% endif %}
-      {% if post.issue %}{% if post.volume %}, {% endif %}no. {{ post.issue }}{% endif %}
-      {% if post.pages %}{% if post.volume or post.issue %}, {% endif %}pp. {{ post.pages }}{% endif %}
+      {% if post.volume or post.issue or post.pages %}
+        {% if post.volume %}, vol. {{ post.volume }}{% endif %}
+        {% if post.issue %}{% if post.volume %}, {% endif %}no. {{ post.issue }}{% endif %}
+        {% if post.pages %}{% if post.volume or post.issue %}, {% endif %}pp. {{ post.pages }}{% endif %}
+      {% endif %}
 
       <!-- Year -->
       {% if post.date %} {{ post.date | date: "%Y" }}{% endif %}
