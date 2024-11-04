@@ -25,15 +25,17 @@
 
       <!-- Journal or Conference -->
       {% if post.category == 'journal' %}
-        <i>{{ post.journal }}</i>
+        in <i>{{ post.journal }}</i>
       {% elsif post.category == 'conference' %}
-        <i>{{ post.conference }}</i>
+        in <i>{{ post.conference }}</i>
       {% endif %}
 
-      <!-- Volume, Issue, and Pages -->
-      {% if post.volume %}, vol. {{ post.volume }}{% endif %}
-      {% if post.issue %}, no. {{ post.issue }}{% endif %}
-      {% if post.pages %}, pp. {{ post.pages }}{% endif %}
+      <!-- Conditional Volume, Issue, and Pages -->
+      {% if post.volume or post.issue or post.pages %}
+        {% if post.volume %}, vol. {{ post.volume }}{% endif %}
+        {% if post.issue %}, no. {{ post.issue }}{% endif %}
+        {% if post.pages %}, pp. {{ post.pages }}{% endif %}
+      {% endif %}
 
       <!-- DOI -->
       {% if post.doi %}, doi: <a href="https://doi.org/{{ post.doi }}">{{ post.doi }}</a>{% endif %}.
