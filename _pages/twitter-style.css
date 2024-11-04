@@ -104,3 +104,36 @@
 .follow-button:hover {
     background-color: #333;
 }
+
+/* Tüm barı tıklanabilir hale getiren header */
+.twitter-feed-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #1DA1F2;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 14px;
+    text-decoration: none;
+    border-radius: 8px 8px 0 0;
+    margin-bottom: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.twitter-feed-header:hover {
+    background-color: #1a91da;
+    text-decoration: none;
+}
+
+.twitter-feed-header span {
+    color: #ffffff;
+}
+
+.follow-text {
+    background-color: #ffffff;
+    color: #1DA1F2;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: normal;
+}
