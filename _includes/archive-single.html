@@ -20,9 +20,11 @@
         {{ post.authors }},
       {% endif %}
 
-      <!-- Title with DOI Link if Available -->
+      <!-- Title with DOI or Conference URL Link if Available -->
       {% if post.doi %}
         "<a href="https://doi.org/{{ post.doi }}">{{ title }}</a>",
+      {% elsif post.conferenceurl %}
+        "<a href="{{ post.conferenceurl }}">{{ title }}</a>",
       {% else %}
         "{{ title }}",
       {% endif %}
@@ -42,8 +44,12 @@
       <!-- Year with Conditional Comma if DOI Exists -->
       {% if post.date %}{{ post.date | date: "%Y" }}{% if post.doi %},{% endif %}{% endif %}
 
-      <!-- DOI as Text if Available -->
-      {% if post.doi %} doi: {{ post.doi }}{% endif %}.
+      <!-- DOI or Conference URL as Text if Available -->
+      {% if post.doi %}
+        doi: {{ post.doi }}
+      {% elsif post.conferenceurl %}
+        <a href="{{ post.conferenceurl }}">Conference Proceedings</a>
+      {% endif %}.
     </p>
 
     {% if post.citation %}
