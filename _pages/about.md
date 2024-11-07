@@ -16,49 +16,7 @@ Dr. Azak is also an Associate Editor at [IEEE Robotics and Automation Letters (R
 <a class="twitter-follow-button" href="https://twitter.com/salimazak">Follow @salimazak</a> <span>for featured papers about Robotics and Computer Vision and flagship conferences (CVPR, ICCV, ECCV, BMVC, ICRA, IROS, NeurIPS, ICLR, ICML, WACV) of our community!</span>  
 
 <!--# News-->
-    //{% include twitter-timeline.html %}
-
-<div id="twitter-feed-container">
-    <a href="https://twitter.com/salimazak" target="_blank" class="twitter-feed-header">
-        <span>Posts from @salimazak</span>
-        <span class="follow-text">Follow on X</span>
-    </a>
-    <div id="twitter-feed"></div>
-</div>
-
-<!-- Display last updated time in the footer -->
-<div id="update-time"></div>
-
-<script>
-fetch('/_pages/tweets.json')
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        return response.json();
-    })
-    .then(data => {
-        const twitterFeed = document.getElementById('twitter-feed');
-        data.forEach(tweet => {
-            const tweetElement = document.createElement('div');
-            tweetElement.className = 'tweet';
-            tweetElement.innerHTML = `
-                <div class="tweet-header">
-                    <img src="${tweet.profile_image_url}" alt="Profile Image" class="profile-image">
-                    <a href="https://twitter.com/${tweet.username}" target="_blank" class="username">@${tweet.username}</a>
-                    <span class="tweet-date">${new Date(tweet.created_at).toLocaleString()}</span>
-                </div>
-                <p>${tweet.text.replace(/@(\w+)/g, '<a href="https://twitter.com/$1" target="_blank">@$1</a>')  // Kullanıcı adlarını linkle göster
-                               .replace(/#(\w+)/g, '#$1')  // Hashtag'leri düz metin olarak göster
-                               .replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank">$1</a>')}</p>
-            `;
-            twitterFeed.appendChild(tweetElement);
-        });
-    })
-    .catch(error => {
-        console.error('There was a problem with the fetch operation:', error);
-    });
-</script>
+  {% include twitter-timeline.html %}
 
 <!-- Display last updated date/time -->
 <script>
@@ -69,50 +27,6 @@ fetch('/_pages/tweets.json')
         document.getElementById('update-time').textContent = `Last updated on: ${formattedDate} ${formattedTime}`;
     });
 </script>
-
-<style>
-    #twitter-feed {
-        max-width: 600px;
-        margin: 0 auto;
-        font-family: Arial, sans-serif;
-    }
-    .tweet {
-        border: 1px solid #e1e8ed;
-        border-radius: 5px;
-        padding: 10px;
-        margin: 10px 0;
-        background-color: #f5f8fa;
-    }
-    .tweet-header {
-        display: flex;
-        align-items: center;
-        margin-bottom: 5px;
-    }
-    .profile-image {
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        margin-right: 10px;
-    }
-    .username {
-        font-weight: bold;
-        color: #1DA1F2;
-        text-decoration: none;
-        margin-right: 10px;
-    }
-    .username:hover {
-        text-decoration: underline;
-    }
-    .tweet-date {
-        color: #657786;
-        font-size: 0.9em;
-    }
-    .tweet p {
-        margin: 0;
-    }
-</style>
-
-
 
 
 
