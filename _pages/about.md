@@ -99,49 +99,6 @@ fetch('/_pages/tweets.json')
     }
 </style>
 
-<style>
-    #twitter-feed {
-        max-width: 600px;
-        margin: 0 auto;
-        font-family: Arial, sans-serif;
-    }
-    .tweet {
-        border: 1px solid #e1e8ed;
-        border-radius: 5px;
-        padding: 10px;
-        margin: 10px 0;
-        background-color: #f5f8fa;
-    }
-    .tweet-header {
-        display: flex;
-        align-items: center;
-        margin-bottom: 5px;
-    }
-    .profile-image {
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        margin-right: 10px;
-    }
-    .username {
-        font-weight: bold;
-        color: #1DA1F2;
-        text-decoration: none;
-        margin-right: 10px;
-    }
-    .username:hover {
-        text-decoration: underline;
-    }
-    .tweet-date {
-        color: #657786;
-        font-size: 0.9em;
-    }
-    .tweet p {
-        margin: 0;
-    }
-</style>
-
-
 <!--A data-driven personal website
 ======
 Like many other Jekyll-based GitHub Pages templates, Academic Pages makes you separate the website's content from its form. The content & metadata of your website are in structured markdown files, while various other files constitute the theme, specifying how to transform that content & metadata into HTML pages. You keep these various markdown (.md), YAML (.yml), HTML, and CSS files in a public GitHub repository. Each time you commit and push an update to the repository, the [GitHub pages](https://pages.github.com/) service creates static HTML pages based on these files, which are hosted on GitHub's servers free of charge.
