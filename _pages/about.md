@@ -21,7 +21,7 @@ Dr. Azak is also an Associate Editor at [IEEE Robotics and Automation Letters (R
 <div id="twitter-feed-container">
     <a href="https://twitter.com/salimazak" target="_blank" class="twitter-feed-header">
         <span>Posts from @salimazak</span>
-        <span class="follow-text">Follow on X</span>
+        <span class="follow-text">Follow on Twitter</span>
     </a>
     <div id="twitter-feed"></div>
 </div>
@@ -46,8 +46,8 @@ fetch('/_pages/tweets.json')
                     <span class="tweet-date">${new Date(tweet.created_at).toLocaleString()}</span>
                 </div>
                 <p>${tweet.text.replace(/(@\w+)/g, '<a href="https://twitter.com/$1" target="_blank">$1</a>')
-                               .replace(/(#\w+)/g, '<a href="https://twitter.com/hashtag/$1" target="_blank">$1</a>')
-                               .replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank">$1</a>')}</p>
+                               .replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank">$1</a>')}
+                </p>
             `;
             twitterFeed.appendChild(tweetElement);
         });
