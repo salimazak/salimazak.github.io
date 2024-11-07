@@ -11,7 +11,7 @@ Salim Azak is a Lecturer at the Structural and Earthquake Engineering Laboratory
 
 His research focuses on the intersection of robotics and computer vision, emphasizing sensor-based control systems. His primary interests lie in extracting meaningful information from visual data to facilitate robot navigation. Additionally, he explores the fusion of visual, inertial, and LiDAR sensors to enhance navigation accuracy. Within this scope, his work covers end-to-end autonomous driving systems, autonomous flight systems, and multi-task learning. His expertise further extends to critical areas such as state estimation, localization, visual SLAM, and visual odometry.
 
-Dr. Azak is also an Associate Editor at [IEEE Robotics and Automation Letters (RA-L)](https://www.ieee-ras.org/publications/ra-l).  
+Dr. Azak is also an Associate Editor at IEEE Robotics and Automation Letters (RA-L).  
 
 <a class="twitter-follow-button" href="https://twitter.com/salimazak">Follow @salimazak</a> <span>for featured papers about Robotics and Computer Vision and flagship conferences (CVPR, ICCV, ECCV, BMVC, ICRA, IROS, NeurIPS, ICLR, ICML, WACV) of our community!</span>  
 
