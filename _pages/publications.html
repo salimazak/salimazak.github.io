@@ -5,14 +5,14 @@ permalink: /publications/
 author_profile: true
 ---
 
-<h2>Journal Papers</h2><hr />
+<h2>Journal Articles Indexed by SCI, SSCI, and AHCI</h2><hr />
 {% for post in site.publications reversed %}
   {% if post.category == "journal" %}
     {% include archive-single.html %}
   {% endif %}
 {% endfor %}
 
-<h2>Conference Papers</h2><hr />
+<h2>Refereed Congress / Symposium Publications in Proceedings</h2><hr />
 {% for post in site.publications reversed %}
   {% if post.category == "conference" %}
     {% include archive-single.html %}
