@@ -48,8 +48,8 @@ fetch('/_pages/tweets.json')
                     <a href="https://twitter.com/${tweet.username}" target="_blank" class="username">@${tweet.username}</a>
                     <span class="tweet-date">${new Date(tweet.created_at).toLocaleString()}</span>
                 </div>
-                <p>${tweet.text.replace(/@(\w+)/g, '<a href="https://twitter.com/$1" target="_blank">@$1</a>')
-                               .replace(/#(\w+)/g, '<a href="https://twitter.com/hashtag/$1" target="_blank">#$1</a>')
+                <p>${tweet.text.replace(/@(\w+)/g, '<a href="https://twitter.com/$1" target="_blank">@$1</a>')  // Kullanıcı adlarını linkle göster
+                               .replace(/#(\w+)/g, '#$1')  // Hashtag'leri düz metin olarak göster
                                .replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank">$1</a>')}</p>
             `;
             twitterFeed.appendChild(tweetElement);
