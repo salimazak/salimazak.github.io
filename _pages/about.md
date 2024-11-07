@@ -99,6 +99,18 @@ fetch('/_pages/tweets.json')
     }
 </style>
 
+<div id="last-updated">
+    <p>Last updated on: <span id="update-time"></span></p>
+</div>
+
+<script>
+    // Sayfa güncellenme tarihini al ve yerel saat formatında göster
+    const updateTime = new Date();
+    const formattedDate = updateTime.getFullYear() + '-' + (updateTime.getMonth() + 1).toString().padStart(2, '0') + '-' + updateTime.getDate().toString().padStart(2, '0');
+    const formattedTime = updateTime.getHours().toString().padStart(2, '0') + ':' + updateTime.getMinutes().toString().padStart(2, '0') + ':' + updateTime.getSeconds().toString().padStart(2, '0');
+    document.getElementById('update-time').textContent = `${formattedDate} ${formattedTime}`;
+</script>
+
 <!--A data-driven personal website
 ======
 Like many other Jekyll-based GitHub Pages templates, Academic Pages makes you separate the website's content from its form. The content & metadata of your website are in structured markdown files, while various other files constitute the theme, specifying how to transform that content & metadata into HTML pages. You keep these various markdown (.md), YAML (.yml), HTML, and CSS files in a public GitHub repository. Each time you commit and push an update to the repository, the [GitHub pages](https://pages.github.com/) service creates static HTML pages based on these files, which are hosted on GitHub's servers free of charge.
