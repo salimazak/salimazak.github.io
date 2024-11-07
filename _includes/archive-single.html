@@ -43,13 +43,6 @@
 
       <!-- Year with Conditional Comma if DOI Exists -->
       {% if post.date %}{{ post.date | date: "%Y" }}{% if post.doi %},{% endif %}{% endif %}
-
-      <!-- DOI or Conference URL as Text if Available -->
-      {% if post.doi %}
-        doi: {{ post.doi }}
-      {% elsif post.conferenceurl %}
-        <a href="{{ post.conferenceurl }}">Conference Proceedings</a>
-      {% endif %}.
     </p>
 
     {% if post.citation %}
