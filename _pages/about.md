@@ -24,83 +24,39 @@ Dr. Azak is also an Associate Editor at [IEEE Robotics and Automation Letters (R
 </div>
 
 <script>
-    fetch('/_pages/tweets.json')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.json();
-        })
-        .then(data => {
-            const twitterFeed = document.getElementById('twitter-feed');
-            data.forEach(tweet => {
-                const tweetElement = document.createElement('div');
-                tweetElement.className = 'tweet';
-                tweetElement.innerHTML = `
-                    <div class="tweet-header">
-                        <img src="${tweet.profile_image_url}" alt="Profile Image" class="profile-image">
-                        <span class="username">@${tweet.username}</span>
-                        <span class="tweet-date">${new Date(tweet.created_at).toLocaleString()}</span>
-                    </div>
-                    <p>${formatTweetText(tweet.text)}</p>
-                `;
-                twitterFeed.appendChild(tweetElement);
-            });
-        })
-        .catch(error => {
-            console.error('There was a problem with the fetch operation:', error);
-        });
+  // Twitter API URL
+  const url = 'https://cors-anywhere.herokuapp.com/https://api.twitter.com/2/tweets?ids=YOUR_TWEET_IDS';
 
-    function formatTweetText(text) {
-        // Hashtags ve mention'ları metin olarak bırak
-        let formattedText = text.replace(/@(\w+)/g, '@$1')  // @mentions metin olarak kalacak
-                                .replace(/#(\w+)/g, '#$1')  // Hashtag'ler metin olarak kalacak
-                                .replace(/https?:\/\/\S+/g, ''); // Linkleri temizle
-        return formattedText;
+  // JSON'dan gelen tweetleri sayfada göster
+  async function fetchTweets() {
+    const response = await fetch(url, {
+      method: 'GET',
+      headers: {
+        'Authorization': 'AAAAAAAAAAAAAAAAAAAAALAhwwEAAAAAyR4Jf02RzFRQaQcCOE62G%2FwLmA0%3DNTUslh06oCHn516erxLYsN0yRq4U3xRfYsNqHmNyGCGGkvH42N',
+      }
+    });
+
+    if (!response.ok) {
+      console.error("Error fetching tweets");
+      return;
     }
+
+    const data = await response.json();
+
+    // Tweetleri ekleyin
+    const tweetsList = document.getElementById('tweets-list');
+    data.data.forEach(tweet => {
+      const listItem = document.createElement('li');
+      listItem.innerHTML = `
+        <p><strong>@salimazak:</strong> ${tweet.text}</p>
+        <small>Posted on: ${new Date(tweet.created_at).toLocaleString()}</small>
+      `;
+      tweetsList.appendChild(listItem);
+    });
+  }
+
+  fetchTweets();
 </script>
-
-<style>
-    #twitter-feed {
-        max-width: 600px;
-        margin: 0 auto;
-        font-family: Arial, sans-serif;
-    }
-    .tweet {
-        border: 1px solid #e1e8ed;
-        border-radius: 5px;
-        padding: 10px;
-        margin: 10px 0;
-        background-color: #f5f8fa;
-    }
-    .tweet-header {
-        display: flex;
-        align-items: center;
-        margin-bottom: 5px;
-    }
-    .profile-image {
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        margin-right: 10px;
-    }
-    .username {
-        font-weight: bold;
-        color: #1DA1F2;
-    }
-    .tweet-date {
-        color: #657786;
-        font-size: 0.9em;
-    }
-    .tweet p {
-        margin: 0;
-    }
-</style>
-
-<!-- Last Updated Section -->
-<div id="last-updated">
-    <p>Last updated on: <span id="update-time"></span></p>
-</div>
 
 <script>
     // Sayfa güncellenme tarihini al ve yerel saat formatında göster
