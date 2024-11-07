@@ -20,19 +20,19 @@ Dr. Azak is also an Associate Editor at [IEEE Robotics and Automation Letters (R
 
 <div id="twitter-feed-container">
     <h3>Posts from @salimazak</h3>
-    <div id="twitter-feed"></div>
+    <ul id="tweets-list"></ul> <!-- This is where the tweets will be displayed -->
 </div>
 
 <script>
-  // Twitter API URL
-  const url = 'https://cors-anywhere.herokuapp.com/https://api.twitter.com/2/tweets?ids=YOUR_TWEET_IDS';
+  // Twitter API URL to fetch recent tweets
+  const url = 'https://cors-anywhere.herokuapp.com/https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=salimazak&count=5';
 
-  // JSON'dan gelen tweetleri sayfada göster
+  // Fetch the tweets from Twitter API
   async function fetchTweets() {
     const response = await fetch(url, {
       method: 'GET',
       headers: {
-        'Authorization': 'AAAAAAAAAAAAAAAAAAAAALAhwwEAAAAAyR4Jf02RzFRQaQcCOE62G%2FwLmA0%3DNTUslh06oCHn516erxLYsN0yRq4U3xRfYsNqHmNyGCGGkvH42N',
+        'Authorization': 'Bearer AAAAAAAAAAAAAAAAAAAAAALAhwwEAAAAAyR4Jf02RzFRQaQcCOE62G%2FwLmA0%3DNTUslh06oCHn516erxLYsN0yRq4U3xRfYsNqHmNyGCGGkvH42N',
       }
     });
 
@@ -43,9 +43,11 @@ Dr. Azak is also an Associate Editor at [IEEE Robotics and Automation Letters (R
 
     const data = await response.json();
 
-    // Tweetleri ekleyin
+    // Get the tweet list container
     const tweetsList = document.getElementById('tweets-list');
-    data.data.forEach(tweet => {
+
+    // Add each tweet to the list
+    data.forEach(tweet => {
       const listItem = document.createElement('li');
       listItem.innerHTML = `
         <p><strong>@salimazak:</strong> ${tweet.text}</p>
@@ -58,13 +60,17 @@ Dr. Azak is also an Associate Editor at [IEEE Robotics and Automation Letters (R
   fetchTweets();
 </script>
 
+<!-- Display last updated date/time -->
 <script>
-    // Sayfa güncellenme tarihini al ve yerel saat formatında göster
     const updateTime = new Date();
     const formattedDate = updateTime.getFullYear() + '-' + (updateTime.getMonth() + 1).toString().padStart(2, '0') + '-' + updateTime.getDate().toString().padStart(2, '0');
     const formattedTime = updateTime.getHours().toString().padStart(2, '0') + ':' + updateTime.getMinutes().toString().padStart(2, '0') + ':' + updateTime.getSeconds().toString().padStart(2, '0');
-    document.getElementById('update-time').textContent = `${formattedDate} ${formattedTime}`;
+    document.getElementById('update-time').textContent = `Last updated on: ${formattedDate} ${formattedTime}`;
 </script>
+
+<!-- Display last updated time in the footer -->
+<div id="update-time"></div>
+
 
 <!--A data-driven personal website
 ======
