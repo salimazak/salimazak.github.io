@@ -9,6 +9,15 @@
       color: #007bff;
       text-decoration: none;
     }
+    .abstract-popup {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      border: 1px solid #ccc;
+      padding: 10px;
+      width: 300px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
   </style>
 </head>
 <body>
@@ -19,30 +28,21 @@
     <div class="container">
       <h1>{{ page.title }}</h1>
       <section class="publications-list">
-        {{ content }}
 
-        <!-- Yazarlar ve dergi bilgilerini göstermek için örnek -->
-        <div class="publication-item">
-          <p><strong>Muzzle Voltage Experiments of the EMFY-3 Launcher</strong></p>
-          <p>Tosun N., Karagoz M., Yurdakonar F., Gulletutan G., Yildirim B., KEYSAN O.</p>
-          <p><em>IEEE Transactions on Plasma Science</em>, vol.50, no.10, pp.3434-3442, 2022 (SCI-Expanded)</p>
-          <!-- Kitap sembolü ile bağlantı -->
-          <a class="abstract-link" onclick="showAbstract('abstract1')"><i class="fas fa-book"></i> Abstract</a>
-        </div>
+        {% for paper in site.publications %}
+          <div class="publication-item">
+            <p><strong>{{ paper.title }}</strong></p>
+            <p>{{ paper.authors }}</p>
+            <p><em>{{ paper.journal }}</em>, vol.{{ paper.volume }}, no.{{ paper.issue }}, pp.{{ paper.pages }}, {{ paper.date | date: "%Y" }} (SCI-Expanded)</p>
+            <a class="abstract-link" onclick="toggleAbstract('abstract{{ forloop.index }}')">
+              <i class="fas fa-book"></i> Abstract
+            </a>
+            <div id="abstract{{ forloop.index }}" class="abstract-popup">
+              <p><strong>Abstract:</strong> {{ paper.abstract }}</p>
+            </div>
+          </div>
+        {% endfor %}
 
-        <!-- Yorum kısmı, kullanıcıya görünmeyecek -->
-        <div style="display:none;">
-          <!-- HTML yorumları kullanarak içerik gizleme -->
-          <!--
-          Bu paragraf bir yorumdur. Sayfada görünmeyecek.
-          Makale özeti: Bu makale, EMFY-3 fırlatıcılarının elektriksel karakteristiklerini inceler.
-          -->
-        </div>
-
-        <!-- Abstract Popup İçeriği -->
-        <div id="abstract1" style="display:none;">
-          <p><strong>Abstract:</strong> This paper investigates the electrical characteristics of the EMFY-3 launcher, focusing on muzzle voltage experiments and their implications in advanced plasma physics research.</p>
-        </div>
       </section>
     </div>
   </main>
@@ -54,14 +54,10 @@
   {% include scripts.html %}
 
   <script>
-    // Abstract popup fonksiyonu
-    function showAbstract(abstractId) {
-      var abstract = document.getElementById(abstractId);
-      if (abstract.style.display === "none") {
-        abstract.style.display = "block";
-      } else {
-        abstract.style.display = "none";
-      }
+    // Toggle abstract popup
+    function toggleAbstract(id) {
+      var popup = document.getElementById(id);
+      popup.style.display = (popup.style.display === "block") ? "none" : "block";
     }
   </script>
 
