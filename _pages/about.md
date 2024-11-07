@@ -26,6 +26,9 @@ Dr. Azak is also an Associate Editor at [IEEE Robotics and Automation Letters (R
     <div id="twitter-feed"></div>
 </div>
 
+<!-- Display last updated time in the footer -->
+<div id="update-time"></div>
+
 <script>
 fetch('/_pages/tweets.json')
     .then(response => {
@@ -42,11 +45,11 @@ fetch('/_pages/tweets.json')
             tweetElement.innerHTML = `
                 <div class="tweet-header">
                     <img src="${tweet.profile_image_url}" alt="Profile Image" class="profile-image">
-                    <span class="username">@${tweet.username}</span>
+                    <a href="https://twitter.com/${tweet.username}" target="_blank" class="username">@${tweet.username}</a>
                     <span class="tweet-date">${new Date(tweet.created_at).toLocaleString()}</span>
                 </div>
-                <p>${tweet.text.replace(/@\w+/g, '$&')  // Kullanıcı adlarını düz metin olarak göster
-                               .replace(/#\w+/g, '$&')  // Hashtag'leri düz metin olarak göster
+                <p>${tweet.text.replace(/@(\w+)/g, '<a href="https://twitter.com/$1" target="_blank">@$1</a>')
+                               .replace(/#(\w+)/g, '<a href="https://twitter.com/hashtag/$1" target="_blank">#$1</a>')
                                .replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank">$1</a>')}</p>
             `;
             twitterFeed.appendChild(tweetElement);
@@ -54,6 +57,16 @@ fetch('/_pages/tweets.json')
     })
     .catch(error => {
         console.error('There was a problem with the fetch operation:', error);
+    });
+</script>
+
+<!-- Display last updated date/time -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const updateTime = new Date();
+        const formattedDate = updateTime.getFullYear() + '-' + (updateTime.getMonth() + 1).toString().padStart(2, '0') + '-' + updateTime.getDate().toString().padStart(2, '0');
+        const formattedTime = updateTime.getHours().toString().padStart(2, '0') + ':' + updateTime.getMinutes().toString().padStart(2, '0') + ':' + updateTime.getSeconds().toString().padStart(2, '0');
+        document.getElementById('update-time').textContent = `Last updated on: ${formattedDate} ${formattedTime}`;
     });
 </script>
 
@@ -87,6 +100,9 @@ fetch('/_pages/tweets.json')
         text-decoration: none;
         margin-right: 10px;
     }
+    .username:hover {
+        text-decoration: underline;
+    }
     .tweet-date {
         color: #657786;
         font-size: 0.9em;
@@ -96,16 +112,6 @@ fetch('/_pages/tweets.json')
     }
 </style>
 
-<!-- Display last updated date/time -->
-<script>
-    const updateTime = new Date();
-    const formattedDate = updateTime.getFullYear() + '-' + (updateTime.getMonth() + 1).toString().padStart(2, '0') + '-' + updateTime.getDate().toString().padStart(2, '0');
-    const formattedTime = updateTime.getHours().toString().padStart(2, '0') + ':' + updateTime.getMinutes().toString().padStart(2, '0') + ':' + updateTime.getSeconds().toString().padStart(2, '0');
-    document.getElementById('update-time').textContent = `Last updated on: ${formattedDate} ${formattedTime}`;
-</script>
-
-<!-- Display last updated time in the footer -->
-<div id="update-time"></div>
 
 
 
