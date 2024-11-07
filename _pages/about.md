@@ -19,42 +19,45 @@ Dr. Azak is also an Associate Editor at [IEEE Robotics and Automation Letters (R
     // {% include twitter-timeline.html %}
 
 <div id="twitter-feed-container">
-    <a href="https://twitter.com/salimazak" target="_blank" class="twitter-feed-header">
-        <span>Posts from @salimazak</span>
-        <span class="follow-text">Follow on X</span>
-    </a>
+    <h3>Posts from @salimazak</h3>
     <div id="twitter-feed"></div>
 </div>
 
 <script>
-fetch('/_pages/tweets.json')
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        return response.json();
-    })
-    .then(data => {
-        const twitterFeed = document.getElementById('twitter-feed');
-        data.forEach(tweet => {
-            const tweetElement = document.createElement('div');
-            tweetElement.className = 'tweet';
-            tweetElement.innerHTML = `
-                <div class="tweet-header">
-                    <img src="${tweet.profile_image_url}" alt="Profile Image" class="profile-image">
-                    <a href="https://twitter.com/${tweet.username}" target="_blank" class="username">@${tweet.username}</a>
-                    <span class="tweet-date">${new Date(tweet.created_at).toLocaleString()}</span>
-                </div>
-                <p>${tweet.text.replace(/(@\w+)/g, '<a href="https://twitter.com/$1" target="_blank">$1</a>')
-                               .replace(/(#\w+)/g, '$1') // Hashtags metin olarak kalacak
-                               .replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank">$1</a>')}</p>
-            `;
-            twitterFeed.appendChild(tweetElement);
+    fetch('/_pages/tweets.json')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            const twitterFeed = document.getElementById('twitter-feed');
+            data.forEach(tweet => {
+                const tweetElement = document.createElement('div');
+                tweetElement.className = 'tweet';
+                tweetElement.innerHTML = `
+                    <div class="tweet-header">
+                        <img src="${tweet.profile_image_url}" alt="Profile Image" class="profile-image">
+                        <span class="username">@${tweet.username}</span>
+                        <span class="tweet-date">${new Date(tweet.created_at).toLocaleString()}</span>
+                    </div>
+                    <p>${formatTweetText(tweet.text)}</p>
+                `;
+                twitterFeed.appendChild(tweetElement);
+            });
+        })
+        .catch(error => {
+            console.error('There was a problem with the fetch operation:', error);
         });
-    })
-    .catch(error => {
-        console.error('There was a problem with the fetch operation:', error);
-    });
+
+    function formatTweetText(text) {
+        // Hashtags ve mention'ları metin olarak bırak
+        let formattedText = text.replace(/@(\w+)/g, '@$1')  // @mentions metin olarak kalacak
+                                .replace(/#(\w+)/g, '#$1')  // Hashtag'ler metin olarak kalacak
+                                .replace(/https?:\/\/\S+/g, ''); // Linkleri temizle
+        return formattedText;
+    }
 </script>
 
 <style>
@@ -84,11 +87,6 @@ fetch('/_pages/tweets.json')
     .username {
         font-weight: bold;
         color: #1DA1F2;
-        text-decoration: none;
-        margin-right: 10px;
-    }
-    .username:hover {
-        text-decoration: underline;
     }
     .tweet-date {
         color: #657786;
