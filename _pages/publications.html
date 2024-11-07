@@ -1,0 +1,20 @@
+---
+layout: archive
+title: "Publications"
+permalink: /publications/
+author_profile: true
+---
+
+<h2>Journal Papers</h2><hr />
+{% for post in site.publications reversed %}
+  {% if post.category == "journal" %}
+    {% include archive-single.html %}
+  {% endif %}
+{% endfor %}
+
+<h2>Conference Papers</h2><hr />
+{% for post in site.publications reversed %}
+  {% if post.category == "conference" %}
+    {% include archive-single.html %}
+  {% endif %}
+{% endfor %}
