@@ -11,7 +11,7 @@ classes: no-sidebar
 
   <p>His research focuses on the intersection of robotics and computer vision, emphasizing sensor-based control systems. His primary interests lie in extracting meaningful information from visual data to facilitate robot navigation. Additionally, he explores the fusion of visual, inertial, and LiDAR sensors to enhance navigation accuracy. Within this scope, his work covers end-to-end autonomous driving systems, autonomous flight systems, and multi-task learning. His expertise further extends to critical areas such as state estimation, localization, visual SLAM, and visual odometry.</p>
 
-  <p>Dr. Azak is an active member of several prestigious organizations, including:</p>
+  <p>Dr. Azak serves as an Associate Editor for IEEE Robotics and Automation Letters. He is also a member of several prestigious organizations, including:</p>
   <ul>
     <li>IEEE</li>
     <li>IEEE Robotics and Automation Society</li>
