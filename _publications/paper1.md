@@ -3,7 +3,7 @@ title: "A Unified Monocular Vision-Based Driving Model for Autonomous Vehicles w
 authors: 'S. Azak, F. Bozkaya, Ş. Tığlıoğlu, A. Yusefi, A. Durdu'
 category: journal
 journal: 'IEEE Transactions on Intelligent Vehicles'
-date: 2024-09-17
+date: 2025-09-17
 # volume: '10' 
 # issue: '9'
 # pages: '4397 - 4408' 
