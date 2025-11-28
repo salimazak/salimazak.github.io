@@ -16,12 +16,68 @@ layout: default
 
   <main id="content">
     <div class="container">
-      <h1>{{ page.title }}</h1> <!-- Page title -->
-      <section class="publications-list">
-        {{ content }} <!-- Markdown content here -->
-      </section>
+      <article class="publication-item">
+
+        <!-- Başlık -->
+        <h1>{{ page.title }}</h1>
+
+        <!-- Yazarlar -->
+        {% if page.authors %}
+          <p class="pub-authors">{{ page.authors }}</p>
+        {% endif %}
+
+        <!-- Meta Bilgiler -->
+        <p class="pub-meta">
+          {% if page.date %}
+            {{ page.date | date: "%Y" }}
+          {% endif %}
+
+          {% if page.venue %}
+            • {{ page.venue }}
+          {% endif %}
+
+          {% if page.volume %}
+            • Vol. {{ page.volume }}
+          {% endif %}
+
+          {% if page.issue %}
+            • No. {{ page.issue }}
+          {% endif %}
+
+          {% if page.number %}
+            • No. {{ page.number }}
+          {% endif %}
+
+          {% if page.pages %}
+            • pp. {{ page.pages }}
+          {% endif %}
+
+          {% if page.doi %}
+            • <a href="https://doi.org/{{ page.doi }}" target="_blank">DOI</a>
+          {% endif %}
+        </p>
+
+        <!-- Yayının geri kalan içeriği -->
+        <div class="pub-content">
+          {{ content }}
+        </div>
+
+      </article>
+
     </div>
   </main>
+
+  {% include footer.html %}
+  {% include scripts.html %}
+
+</body>
+</html>
+   <!--   <h1>{{ page.title }}</h1> <!-- Page title -->
+   <!--   <section class="publications-list">
+        {{ content }} <!-- Markdown content here -->
+    <!--  </section>
+    </div>
+  </main> -->
 
   <footer>
     {% include footer.html %}
@@ -29,7 +85,7 @@ layout: default
 
   {% include scripts.html %}
 
-</body>
+<!-- </body>
 </html>
 
 
