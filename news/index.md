@@ -1,6 +1,6 @@
 ---
 title: "News"
-layout: page
+layout: single
 classes: no-sidebar
 ---
 
