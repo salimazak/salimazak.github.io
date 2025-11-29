@@ -1,5 +1,5 @@
 ---
-title: "### Upcoming Event: Tutorial at TOK2024 Conference"
+title: "Upcoming Event: Tutorial at TOK2024 Conference"
 date: 2025-02-01
 ---
 
