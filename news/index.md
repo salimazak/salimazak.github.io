@@ -1,6 +1,6 @@
 ---
 title: "News"
-layout: page
+layout: news
 classes: no-sidebar
 ---
 
@@ -14,7 +14,7 @@ classes: no-sidebar
   </div>
 </div>
   
-
+<!--
 # News
 
 - ### Associate Editor Position at IEEE Robotics and Automation Letters (RA-L)
