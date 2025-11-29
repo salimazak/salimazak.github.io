@@ -1,5 +1,5 @@
 ---
-title: "### Paper Accepted at IEEE Transactions on Intelligent Vehicles (T-IV)"
+title: "Paper Accepted at IEEE Transactions on Intelligent Vehicles (T-IV)"
 date: 2025-02-01
 ---
 
