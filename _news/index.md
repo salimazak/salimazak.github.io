@@ -4,6 +4,8 @@ layout: single
 classes: no-sidebar
 ---
 
+Layout used: {{ page.layout }}
+
 <div class="left-sidebar">
   <img src="/images/SA2.JPG" alt="SA2" class="profile-photo">
 
