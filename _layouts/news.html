@@ -2,38 +2,51 @@
 layout: default
 ---
 
-<main id="content">
-  <div class="container">
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'en' }}">
+<head>
+  {% include head.html %}
+</head>
+<body>
 
-    <!-- NEWS PAGE CONTENT (your index.md content) -->
-    <div class="page-content">
-      {{ content }}
+  {% include masthead.html %}
+
+  <main id="content">
+    <div class="container">
+
+      <!-- 1) Orijinal index.md içeriği burada gösterilir. Eğer index.md boşsa bu bölüm boş kalır -->
+      <div class="page-content">
+        {{ content }}
+      </div>
+
+      <!-- 2) Eğer site.news koleksiyonu varsa listeler. Eğer yoksa sessizce atlar -->
+      {% if site.news and site.news.size > 0 %}
+      <section class="news-list" aria-label="News list" style="margin-top: 2rem;">
+        {% assign sorted_news = site.news | sort: 'date' | reverse %}
+        {% for item in sorted_news %}
+          <article class="news-entry" style="margin-bottom: 1.75rem;">
+            <div class="news-date" style="color:#6c757d; font-size:0.95em; margin-bottom:0.25rem;">
+              {{ item.date | date: "%B %d, %Y" }}
+            </div>
+            <h3 style="margin:0 0 0.25rem 0;">
+              <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+            </h3>
+            <div class="news-excerpt" style="margin-top:0.25rem;">
+              {{ item.excerpt | markdownify }}
+            </div>
+          </article>
+        {% endfor %}
+      </section>
+      {% else %}
+      <!-- site.news yoksa burası gözükür (isteğe bağlı) -->
+      <p style="color:#888; margin-top:1rem;">No news items found. If you intended to use the news collection, create files in <code>_news/</code> with front matter including a <code>date:</code>.</p>
+      {% endif %}
+
     </div>
+  </main>
 
-    <!-- AUTOMATIC NEWS LIST -->
-    <section class="news-list">
-      {% assign sorted_news = site.news | sort: 'date' | reverse %}
-      {% for item in sorted_news %}
-        <div class="news-entry" style="margin-bottom: 30px;">
-          
-          <!-- Talks sayfasındaki gibi gri tarih -->
-          <div class="news-date" style="color: #777; font-size: 0.9em; margin-bottom: 6px;">
-            {{ item.date | date: "%B %d, %Y" }}
-          </div>
+  {% include footer.html %}
+  {% include scripts.html %}
 
-          <h3 style="margin: 0;">
-            <a href="{{ item.url | relative_url }}">
-              {{ item.title }}
-            </a>
-          </h3>
-
-          <p style="margin-top: 6px;">
-            {{ item.excerpt }}
-          </p>
-
-        </div>
-      {% endfor %}
-    </section>
-
-  </div>
-</main>
+</body>
+</html>
