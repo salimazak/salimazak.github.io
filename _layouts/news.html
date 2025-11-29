@@ -1,0 +1,39 @@
+---
+layout: default
+---
+
+<main id="content">
+  <div class="container">
+
+    <!-- NEWS PAGE CONTENT (your index.md content) -->
+    <div class="page-content">
+      {{ content }}
+    </div>
+
+    <!-- AUTOMATIC NEWS LIST -->
+    <section class="news-list">
+      {% assign sorted_news = site.news | sort: 'date' | reverse %}
+      {% for item in sorted_news %}
+        <div class="news-entry" style="margin-bottom: 30px;">
+          
+          <!-- Talks sayfasındaki gibi gri tarih -->
+          <div class="news-date" style="color: #777; font-size: 0.9em; margin-bottom: 6px;">
+            {{ item.date | date: "%B %d, %Y" }}
+          </div>
+
+          <h3 style="margin: 0;">
+            <a href="{{ item.url | relative_url }}">
+              {{ item.title }}
+            </a>
+          </h3>
+
+          <p style="margin-top: 6px;">
+            {{ item.excerpt }}
+          </p>
+
+        </div>
+      {% endfor %}
+    </section>
+
+  </div>
+</main>
