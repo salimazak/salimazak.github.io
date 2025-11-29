@@ -1,5 +1,5 @@
 ---
-title: "### Upcoming Event: Invited Speaker at RACLAB Mid-Term Camp"
+title: "Upcoming Event: Invited Speaker at RACLAB Mid-Term Camp"
 date: 2025-02-01
 ---
 
