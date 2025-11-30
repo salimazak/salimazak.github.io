@@ -223,7 +223,9 @@ collections:
     permalink: /:collection/:path/
   news:
     output: true
-    permalink: /:collection/:path/
+    permalink: /news/:path/
+    layout: news
+    # permalink: /:collection/:path/     Bu satırla birlikte layout: news satırı da yeni eklendi
 
 
 # These settings control how pages and collections are included in the site
