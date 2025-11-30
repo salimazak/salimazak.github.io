@@ -16,7 +16,7 @@ classes: no-sidebar
 
 <div style="overflow:hidden;">
 
-# News
+<h1 class="page__title">News</h1>
 
 {% assign sorted_news = site.news | sort: "date" | reverse %}
 {% for item in sorted_news %}
@@ -42,3 +42,4 @@ classes: no-sidebar
 {% endfor %}
 
 </div>
+
