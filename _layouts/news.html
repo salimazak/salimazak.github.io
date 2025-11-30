@@ -2,35 +2,50 @@
 layout: default
 ---
 
-{% include head.html %}
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'en' }}">
+<head>
+  {% include head.html %}
 
-<style>
-  .page__title {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    font-size: 2.2rem;
-    font-weight: 600;
-    color: #000 !important;
-  }
-</style>
-<p style="color:red; font-weight:bold;">NEWS LAYOUT WORKING</p>
+  <style>
+    .page__title {
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+      font-size: 2.2rem;
+      font-weight: 600;
+      color: #000 !important;
+    }
+  </style>
+</head>
 
+<body>
 
-    <!-- Soldaki fotoğraf -->
+{% include masthead.html %}
+
+<main id="content">
+  <div class="container">
+
+    <!-- TEST: Bu mutlaka görünmeli -->
+    <p style="color:red; font-size:24px; font-weight:bold;">
+      NEWS LAYOUT WORKING
+    </p>
+
+    <h1 class="page__title">{{ page.title }}</h1>
+
+    <!-- Sol fotoğraf -->
     <div style="float:left; width:320px; margin-right:40px; margin-bottom:30px;">
       <img src="{{ '/images/SA2.JPG' | relative_url }}"
-           alt="SA2"
            style="width:100%; border-radius:6px;">
     </div>
 
-    <!-- Sağdaki haber listesi -->
+    <!-- Sağdaki içerik -->
     <div style="overflow:hidden;">
 
       {% assign sorted_news = site.news | sort: 'date' | reverse %}
       {% for item in sorted_news %}
+
         <article style="margin-bottom:2rem;">
 
-          <!-- Haber başlığı: siyah -->
           <h3 style="margin:0 0 0.25rem 0; color:#000;">
             <a href="{{ item.url | relative_url }}"
                style="color:#000; text-decoration:none;">
@@ -38,14 +53,10 @@ layout: default
             </a>
           </h3>
 
-          <!-- Tarih: küçük ve gri, başlığın ALTINDA -->
-          <p style="color:#6c757d;
-                    font-size:0.8em;
-                    margin:0 0 0.8rem 0;">
+          <p style="color:#6c757d; font-size:0.8em; margin:0 0 0.8rem 0;">
             {{ item.date | date: "%B %d, %Y" }}
           </p>
 
-          <!-- Haber içeriği -->
           <div>
             {{ item.content | markdownify }}
           </div>
@@ -61,4 +72,9 @@ layout: default
     </div>
 
   </div>
-</div>
+</main>
+
+{% include footer.html %}
+
+</body>
+</html>
