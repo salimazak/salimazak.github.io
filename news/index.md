@@ -7,7 +7,8 @@ classes: no-sidebar
 <div style="float:left; width:320px; margin-right:40px; margin-bottom:30px;">
   <img src="/images/SA2.JPG" alt="SA2" style="width:100%; border-radius:6px;">
 
-  <div style="margin-top:1rem;">
+  <!-- Visitor map sadece gizlendi — HTML duruyor ama görünmüyor -->
+  <div style="margin-top:1rem; display:none;">
     <h3>Where My Visitors Are From</h3>
     <script type="text/javascript" id="clustrmaps"
       src="//clustrmaps.com/map_v2.js?d=7yU4-8nEGjyXwXk3zoRxGmIsJofySGSt3WY9aqUCf20&cl=ffffff&w=a">
@@ -17,7 +18,7 @@ classes: no-sidebar
 
 <div style="overflow:hidden;">
 
-<!-- 📌 Publications sayfasındaki başlıkla *birebir aynı* -->
+<!-- Publications ile %100 aynı başlık -->
 <h1>{{ page.title }}</h1>
 
 {% assign sorted_news = site.news | sort: "date" | reverse %}
@@ -31,7 +32,7 @@ classes: no-sidebar
       </a>
     </h3>
 
-    <!-- Tarih: Talks sayfası ile birebir aynı stil -->
+    <!-- Tarih Talks formatı -->
     <p style="color:#6c757d; font-size:0.75em; margin-top:-0.25rem; margin-bottom:0.8rem;">
       {{ item.date | date: "%B %d, %Y" }}
     </p>
