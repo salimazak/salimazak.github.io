@@ -2,6 +2,7 @@
 title: "News"
 layout: single
 classes: no-sidebar
+author_profile: false
 ---
 
 Layout used: {{ page.layout }}
