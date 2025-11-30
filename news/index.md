@@ -4,45 +4,29 @@ layout: single
 author_profile: false
 ---
 
+<!-- ÖNCE: Default başlığı gizliyoruz -->
 <style>
-  /* Sayfa başlığı (Publications ile aynı görünüm) */
   .page__title {
-    color: #333 !important;
-    font-size: 2rem !important;
-    margin-top: 1.5rem !important;
-    margin-bottom: 1.5rem !important;
-    font-weight: 700 !important;
-  }
-
-  /* Haber başlıkları */
-  .news-title {
-    color: #000;
-    font-size: 1.15rem;
-    font-weight: 600;
-    margin-bottom: 0.3rem;
-  }
-
-  /* Tarih (Talks'taki ile aynı tonda, biraz küçük) */
-  .news-date {
-    color: #6c757d;
-    font-size: 0.78em;
-    margin-top: -0.2rem;
-    margin-bottom: 0.8rem;
-  }
-
-  /* HR daha soft */
-  .news-divider {
-    border: none;
-    border-top: 1px solid #e0e0e0;
-    margin: 1.2rem 0;
+    display: none !important;
   }
 </style>
+
+<!-- SONRA: Publications ile aynı başlık blokunu kendimiz yazıyoruz -->
+<h1 style="
+  font-size:2rem;
+  font-weight:700;
+  color:#333;
+  margin-top:1.5rem;
+  margin-bottom:1.5rem;
+">
+  News
+</h1>
 
 <!-- Sol kolon: SA2 foto -->
 <div style="float:left; width:320px; margin-right:40px; margin-bottom:30px;">
   <img src="/images/SA2.JPG" alt="SA2" style="width:100%; border-radius:6px;">
 
-  <!-- Visitor map gizli -->
+  <!-- Widget gizli -->
   <div style="margin-top:1rem; display:none;">
     <h3>Where My Visitors Are From</h3>
     <script type="text/javascript" id="clustrmaps"
@@ -51,7 +35,7 @@ author_profile: false
   </div>
 </div>
 
-<!-- Sağ kolon: haber listesi -->
+<!-- Sağ kolon -->
 <div style="overflow:hidden;">
 
 {% assign sorted_news = site.news | sort: "date" | reverse %}
@@ -60,14 +44,14 @@ author_profile: false
   <article style="margin-bottom:2.5rem;">
 
     <!-- Haber başlığı -->
-    <h3 class="news-title">
+    <h3 style="margin:0 0 0.25rem 0; color:#000; font-size:1.15rem; font-weight:600;">
       <a href="{{ item.url | relative_url }}" style="color:#000; text-decoration:none;">
         {{ item.title }}
       </a>
     </h3>
 
     <!-- Tarih -->
-    <p class="news-date">
+    <p style="color:#6c757d; font-size:0.78em; margin-top:-0.2rem; margin-bottom:0.8rem;">
       {{ item.date | date: "%B %d, %Y" }}
     </p>
 
@@ -78,7 +62,7 @@ author_profile: false
 
   </article>
 
-  <hr class="news-divider" />
+  <hr style="border:none; border-top:1px solid #e0e0e0; margin:1.2rem 0;" />
 
 {% endfor %}
 
