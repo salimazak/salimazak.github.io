@@ -1,6 +1,6 @@
 ---
 title: "News"
-layout: single
+layout: news
 author_profile: false
 ---
 
@@ -67,3 +67,4 @@ author_profile: false
 {% endfor %}
 
 </div>
+
