@@ -4,13 +4,6 @@ layout: news
 author_profile: false
 ---
 
-<!-- ÖNCE: Default başlığı gizliyoruz -->
-<style>
-  .page__title {
-    display: none !important;
-  }
-</style>
-
 <!-- SONRA: Publications ile aynı başlık blokunu kendimiz yazıyoruz -->
 <h1 style="
   font-size:2rem;
@@ -67,4 +60,5 @@ author_profile: false
 {% endfor %}
 
 </div>
+
 
