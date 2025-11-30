@@ -1,0 +1,94 @@
+---
+layout: default
+---
+
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'en' }}">
+<head>
+  {% include head.html %}
+  <style>
+    /* Tarih stilini talks ile aynı yap */
+    .news-date {
+      color: #6c757d;
+      font-size: 0.85em;
+      margin-bottom: 0.3rem;
+    }
+
+    /* Entry blokları */
+    .news-entry {
+      margin-bottom: 2rem;
+    }
+
+    /* Başlık stili */
+    .news-entry h3 {
+      margin-bottom: 0.4rem;
+    }
+
+    /* Sol taraftaki özel fotoğraf alanı */
+    .custom-left-box {
+      float: left;
+      width: 320px;
+      margin-right: 40px;
+      margin-bottom: 40px;
+    }
+
+    .custom-left-box img {
+      width: 100%;
+      border-radius: 6px;
+    }
+
+    /* İçerik kolonunu geniş tut */
+    .news-content {
+      overflow: hidden;
+    }
+  </style>
+</head>
+
+<body>
+  {% include masthead.html %}
+
+  <main id="content">
+    <div class="container">
+
+      <h1>{{ page.title }}</h1>
+
+      <!-- Sol özel kutu: SA2 foto + visitor map -->
+      <div class="custom-left-box">
+        <img src="/images/SA2.JPG" alt="SA2">
+
+        <div class="visitor-map" style="margin-top: 1rem;">
+          <h3>Where My Visitors Are From</h3>
+          <script type="text/javascript" id="clustrmaps"
+            src="//clustrmaps.com/map_v2.js?d=7yU4-8nEGjyXwXk3zoRxGmIsJofySGSt3WY9aqUCf20&cl=ffffff&w=a"></script>
+        </div>
+      </div>
+
+      <!-- Sağdaki ana içerik -->
+      <div class="news-content">
+
+        {% assign sorted_news = site.news | sort: "date" | reverse %}
+        {% for item in sorted_news %}
+        <article class="news-entry">
+          <p class="news-date">
+            {{ item.date | date: "%B %d, %Y" }}
+          </p>
+
+          <h3>
+            <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+          </h3>
+
+          <div class="news-body">
+            {{ item.content | markdownify }}
+          </div>
+        </article>
+        {% endfor %}
+
+      </div>
+
+    </div>
+  </main>
+
+  {% include footer.html %}
+  {% include scripts.html %}
+</body>
+</html>
