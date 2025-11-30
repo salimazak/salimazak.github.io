@@ -16,22 +16,29 @@ classes: no-sidebar
 
 <div style="overflow:hidden;">
 
+# News
+
 {% assign sorted_news = site.news | sort: "date" | reverse %}
 {% for item in sorted_news %}
   <article style="margin-bottom:2rem;">
-    <p style="color:#6c757d; font-size:0.85em; margin-bottom:0.2rem;">
+
+    <!-- BAŞLIK: siyah, mavi değil -->
+    <h3 style="margin:0 0 0.15rem 0;">
+      <a href="{{ item.url | relative_url }}" style="color:#000; text-decoration:none;">
+        {{ item.title }}
+      </a>
+    </h3>
+
+    <!-- TARİH: başlığın altında, küçük ve gri -->
+    <p style="color:#6c757d; font-size:0.75em; margin-top:-0.1rem; margin-bottom:0.8rem;">
       {{ item.date | date: "%B %d, %Y" }}
     </p>
-
-    <h3 style="margin:0 0 0.3rem 0;">
-      <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
-    </h3>
 
     <div>
       {{ item.content | markdownify }}
     </div>
   </article>
-  <hr>
+  <hr />
 {% endfor %}
 
 </div>
