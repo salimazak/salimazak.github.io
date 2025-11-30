@@ -7,102 +7,65 @@ layout: default
 <head>
   {% include head.html %}
   <style>
-
-    /* Büyük sayfa başlığı (Talks ile birebir aynı) */
-    h1.page__title {
-      font-size: 2em;
-      font-weight: 600;
-      margin-bottom: 1.4rem;
-      color: #000;
+    .page__title {
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+      font-size: 2.2rem;
+      color: #000 !important;
     }
 
-    /* Entry başlığı talks stilinde siyah */
-    .news-entry h3 a {
-      color: #000 !important;   /* başlık linkleri siyah */
-      text-decoration: none;
-    }
-    .news-entry h3 a:hover {
-      text-decoration: underline;
-    }
-
-    /* Tarih talks'taki gibi küçük */
     .news-date {
       color: #6c757d;
       font-size: 0.75em;
-      margin-top: -0.2rem;
-      margin-bottom: 1rem;
+      margin-top: -0.25rem;
+      margin-bottom: 0.8rem;
     }
 
-    /* Sol fotoğraf alanı */
-    .custom-left-box {
-      float: left;
-      width: 320px;
-      margin-right: 40px;
-      margin-bottom: 40px;
+    hr {
+      margin: 2rem 0;
     }
-    .custom-left-box img {
-      width: 100%;
-      border-radius: 6px;
-    }
-
-    /* Sağ içerik alanı */
-    .news-content {
-      overflow: hidden;
-    }
-
   </style>
 </head>
 
 <body>
-  {% include masthead.html %}
 
-  <main id="content">
-    <div class="container">
+{% include masthead.html %}
 
-      <!-- TALK SAYFASINDAKİNE BİREBİR AYNI H1 -->
-      <h1 class="page__title">{{ page.title }}</h1>
+<main id="content">
+  <div class="container">
 
-      <!-- Sol özel kutu -->
-      <div class="custom-left-box">
-        <img src="/images/SA2.JPG" alt="SA2">
+    <h1 class="page__title">{{ page.title }}</h1>
 
-        <div class="visitor-map" style="margin-top: 1rem;">
-          <h3>Where My Visitors Are From</h3>
-          <script type="text/javascript" id="clustrmaps"
-            src="//clustrmaps.com/map_v2.js?d=7yU4-8nEGjyXwXk3zoRxGmIsJofySGSt3WY9aqUCf20&cl=ffffff&w=a"></script>
-        </div>
-      </div>
+    <div style="float:left; width:320px; margin-right:40px; margin-bottom:30px;">
+      <img src="/images/SA2.JPG" style="width:100%; border-radius:6px;">
+    </div>
 
-      <!-- Sağdaki news içeriği -->
-      <div class="news-content">
+    <div style="overflow:hidden;">
 
-        {% assign sorted_news = site.news | sort: "date" | reverse %}
-        {% for item in sorted_news %}
-        <article class="news-entry">
+      {% assign sorted_news = site.news | sort: "date" | reverse %}
+      {% for item in sorted_news %}
+      <article style="margin-bottom:2rem;">
+        <h3 style="margin:0 0 0.25rem 0; color:#000;">
+          <a href="{{ item.url | relative_url }}" style="color:#000; text-decoration:none;">
+            {{ item.title }}
+          </a>
+        </h3>
 
-          <!-- Entry başlığı (SİYAH) -->
-          <h3>
-            <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
-          </h3>
+        <p class="news-date">{{ item.date | date: "%B %d, %Y" }}</p>
 
-          <!-- TARİH BAŞLIĞIN ALTINA ALINDI -->
-          <p class="news-date">
-            {{ item.date | date: "%B %d, %Y" }}
-          </p>
+        <div>{{ item.content | markdownify }}</div>
 
-          <div class="news-body">
-            {{ item.content | markdownify }}
-          </div>
+      </article>
 
-        </article>
-        {% endfor %}
-
-      </div>
+      <hr>
+      {% endfor %}
 
     </div>
-  </main>
 
-  {% include footer.html %}
-  {% include scripts.html %}
+  </div>
+</main>
+
+{% include footer.html %}
+
 </body>
 </html>
