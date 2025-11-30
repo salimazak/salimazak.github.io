@@ -10,36 +10,40 @@ classes: no-sidebar
   <div style="margin-top:1rem;">
     <h3>Where My Visitors Are From</h3>
     <script type="text/javascript" id="clustrmaps"
-            src="//clustrmaps.com/map_v2.js?d=7yU4-8nEGjyXwXk3zoRxGmIsJofySGSt3WY9aqUCf20&cl=ffffff&w=a"></script>
+      src="//clustrmaps.com/map_v2.js?d=7yU4-8nEGjyXwXk3zoRxGmIsJofySGSt3WY9aqUCf20&cl=ffffff&w=a">
+    </script>
   </div>
 </div>
 
 <div style="overflow:hidden;">
 
-<h1 class="page__title">News</h1>
+<!-- 📌 Publications sayfasındaki başlıkla *birebir aynı* -->
+<h1>{{ page.title }}</h1>
 
 {% assign sorted_news = site.news | sort: "date" | reverse %}
 {% for item in sorted_news %}
   <article style="margin-bottom:2rem;">
 
-    <!-- BAŞLIK: siyah, mavi değil -->
-    <h3 style="margin:0 0 0.15rem 0;">
+    <!-- Haber başlığı siyah -->
+    <h3 style="margin:0 0 0.25rem 0; color:#000;">
       <a href="{{ item.url | relative_url }}" style="color:#000; text-decoration:none;">
         {{ item.title }}
       </a>
     </h3>
 
-    <!-- TARİH: başlığın altında, küçük ve gri -->
-    <p style="color:#6c757d; font-size:0.75em; margin-top:-0.1rem; margin-bottom:0.8rem;">
+    <!-- Tarih: Talks sayfası ile birebir aynı stil -->
+    <p style="color:#6c757d; font-size:0.75em; margin-top:-0.25rem; margin-bottom:0.8rem;">
       {{ item.date | date: "%B %d, %Y" }}
     </p>
 
     <div>
       {{ item.content | markdownify }}
     </div>
+
   </article>
+
   <hr />
+
 {% endfor %}
 
 </div>
-
