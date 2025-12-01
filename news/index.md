@@ -29,25 +29,26 @@ classes: no-sidebar
 {% for item in sorted_news %}
 
   <!-- ARTICLE + GÖRSEL YAPISI -->
-  <article style="display:flex; gap:20px; margin-bottom:2rem;">
-    {% if item.image %}
-<div style="
-  width:100px;
-  height:100px;
-  flex-shrink:0;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border-radius:6px;
-  overflow:hidden;
-  background:#fff;
-  border:1px solid #eee;
-">
-  <img src="/images/{{ item.image }}"
-       alt="{{ item.title }}"
-       style="max-width:100%; max-height:100%; object-fit:contain;">
-</div>
-{% endif %}
+  <article style="margin-bottom:2rem; display:flex; gap:20px;">
+
+  {% if item.image %}
+  <div style="
+    width:100px;
+    height:100px;
+    flex-shrink:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:6px;
+    overflow:hidden;
+    background:#fff;
+    border:1px solid #eee;
+  ">
+    <img src="/images/{{ item.image }}"
+         alt="{{ item.title }}"
+         style="width:100%; height:auto;">
+  </div>
+  {% endif %}
     <div>
       <!-- Haber başlığı siyah -->
       <h3 style="margin:0 0 0.25rem 0; color:#000;">
@@ -71,6 +72,7 @@ classes: no-sidebar
 {% endfor %}
 
 </div>
+
 
 
 
