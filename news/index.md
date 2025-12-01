@@ -5,7 +5,7 @@ classes: no-sidebar
 ---
 
 <div style="float:left; width:320px; margin-right:40px; margin-bottom:30px;">
-  <img src="/images/SA2.JPG" alt="SA2" style="width:100%; border-radius:6px;">
+  <img src="/images/SA2.JPG" alt="SA2" style="width:70%; border-radius:6px;">
 
   <!-- Visitor map sadece gizlendi — HTML duruyor ama görünmüyor -->
   <div style="margin-top:1rem; display:none;">
@@ -48,3 +48,4 @@ classes: no-sidebar
 {% endfor %}
 
 </div>
+
