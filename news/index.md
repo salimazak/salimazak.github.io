@@ -27,22 +27,30 @@ classes: no-sidebar
 
 {% assign sorted_news = site.news | sort: "date" | reverse %}
 {% for item in sorted_news %}
-  <article style="margin-bottom:2rem;">
 
-    <!-- Haber başlığı siyah -->
-    <h3 style="margin:0 0 0.25rem 0; color:#000;">
-      <a href="{{ item.url | relative_url }}" style="color:#000; text-decoration:none;">
-        {{ item.title }}
+  <!-- ARTICLE + GÖRSEL YAPISI -->
+  <article style="display:flex; gap:20px; margin-bottom:2rem;">
+    {% if item.image %}
+      <a href="{{ item.full_image | default: item.image }}" target="_blank">
+        <img src="{{ item.image }}"
+             alt="news image"
+             style="width:120px; height:auto; border-radius:6px; flex-shrink:0;">
       </a>
-    </h3>
-
-    <!-- Tarih Talks formatı -->
-    <p style="color:#6c757d; font-size:0.75em; margin-top:-0.25rem; margin-bottom:0.8rem;">
-      {{ item.date | date: "%B %d, %Y" }}
-    </p>
-
+    {% endif %}
     <div>
-      {{ item.content | markdownify }}
+      <!-- Haber başlığı siyah -->
+      <h3 style="margin:0 0 0.25rem 0; color:#000;">
+        <a href="{{ item.url | relative_url }}" style="color:#000; text-decoration:none;">
+          {{ item.title }}
+        </a>
+      </h3>
+      <!-- Tarih Talks formatı -->
+      <p style="color:#6c757d; font-size:0.75em; margin-top:-0.25rem; margin-bottom:0.8rem;">
+        {{ item.date | date: "%B %d, %Y" }}
+      </p>
+      <div>
+        {{ item.content | markdownify }}
+      </div>
     </div>
 
   </article>
@@ -52,6 +60,3 @@ classes: no-sidebar
 {% endfor %}
 
 </div>
-
-
-
