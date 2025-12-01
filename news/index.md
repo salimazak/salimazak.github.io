@@ -31,10 +31,9 @@ classes: no-sidebar
   <!-- ARTICLE + GÖRSEL YAPISI -->
   <article style="display:flex; gap:20px; margin-bottom:2rem;">
     {% if item.image %}
-      <a href="{{ item.full_image | default: item.image }}" target="_blank">
-        <img src="{{ item.image }}"
-             alt="news image"
-             style="width:120px; height:auto; border-radius:6px; flex-shrink:0;">
+      <a href="{{ item.image }}" target="_blank">
+      <img src="{{ item.image }}" alt="news image"
+           style="width:120px; height:auto; border-radius:6px;">
       </a>
     {% endif %}
     <div>
@@ -60,3 +59,4 @@ classes: no-sidebar
 {% endfor %}
 
 </div>
+
