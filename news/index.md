@@ -30,9 +30,10 @@ classes: no-sidebar
 
   <!-- ARTICLE + GÖRSEL YAPISI -->
   <article style="margin-bottom:2rem; display:flex; gap:20px;">
-
   {% if item.image %}
-  <div style="
+  <!-- Küçük görsel + popup için A etiketi -->
+    <a href="/images/{{ item.image }}" class="image-popup"
+       style="
     width:100px;
     height:100px;
     flex-shrink:0;
@@ -72,6 +73,25 @@ classes: no-sidebar
 {% endfor %}
 
 </div>
+<!-- ========================================= -->
+<!--  LIGHTBOX (POPUP) AKTİF EDEN JAVASCRIPT  -->
+<!-- ========================================= -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  if (window.jQuery && jQuery().magnificPopup) {
+    $('.image-popup').magnificPopup({
+      type: 'image',
+      closeOnContentClick: true,
+      mainClass: 'mfp-fade',
+      zoom: {
+        enabled: true,
+        duration: 200
+      }
+    });
+  }
+});
+</script>
+
 
 
 
