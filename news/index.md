@@ -43,7 +43,7 @@ classes: no-sidebar
   background:#fff;
   border:1px solid #eee;
 ">
-  <img src="/images/news/{{ item.image }}"
+  <img src="/images/{{ item.image }}"
        alt="{{ item.title }}"
        style="max-width:100%; max-height:100%; object-fit:contain;">
 </div>
@@ -71,6 +71,7 @@ classes: no-sidebar
 {% endfor %}
 
 </div>
+
 
 
 
