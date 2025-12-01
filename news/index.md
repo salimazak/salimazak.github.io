@@ -4,7 +4,7 @@ layout: page
 classes: no-sidebar
 ---
 
-<div style="float:left; width:320px; margin-right:40px; margin-bottom:30px;">
+<div style="float:left; width:320px; margin-right:40px; margin-bottom:30px; margin-top:2rem;">
   <img src="/images/SA2.JPG" alt="SA2" style="width:70%; border-radius:6px;">
 
   <!-- Visitor map sadece gizlendi — HTML duruyor ama görünmüyor -->
@@ -19,7 +19,11 @@ classes: no-sidebar
 <div style="overflow:hidden;">
 
 <!-- Publications ile %100 aynı başlık -->
-<h1>{{ page.title }}</h1>
+<!-- <h1>{{ page.title }}</h1> -->
+<!-- Başlığı Publications gibi yap -->
+<h1 style="margin-top: 2rem; margin-bottom: 2rem;">
+  {{ page.title }}
+</h1>
 
 {% assign sorted_news = site.news | sort: "date" | reverse %}
 {% for item in sorted_news %}
@@ -48,4 +52,5 @@ classes: no-sidebar
 {% endfor %}
 
 </div>
+
 
