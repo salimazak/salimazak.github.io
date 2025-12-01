@@ -33,7 +33,7 @@ classes: no-sidebar
     {% if item.image %}
       <a href="{{ item.image }}" target="_blank">
       <img src="{{ item.image }}" alt="news image"
-           style="width:100px;
+           style="width:160px;
                   height:auto;
                   border-radius:6px;">
       </a>
@@ -61,6 +61,7 @@ classes: no-sidebar
 {% endfor %}
 
 </div>
+
 
 
 
