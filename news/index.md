@@ -31,14 +31,23 @@ classes: no-sidebar
   <!-- ARTICLE + GÖRSEL YAPISI -->
   <article style="display:flex; gap:20px; margin-bottom:2rem;">
     {% if item.image %}
-      <a href="{{ item.image }}" target="_blank">
-      <img src="{{ item.image }}" alt="news image"
-           style="max-width:100px;
-                  width:100%;
-                  height:auto;
-                  border-radius:6px;">
-      </a>
-    {% endif %}
+<div style="
+  width:100px;
+  height:100px;
+  flex-shrink:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:6px;
+  overflow:hidden;
+  background:#fff;
+  border:1px solid #eee;
+">
+  <img src="/images/news/{{ item.image }}"
+       alt="{{ item.title }}"
+       style="max-width:100%; max-height:100%; object-fit:contain;">
+</div>
+{% endif %}
     <div>
       <!-- Haber başlığı siyah -->
       <h3 style="margin:0 0 0.25rem 0; color:#000;">
@@ -62,6 +71,7 @@ classes: no-sidebar
 {% endfor %}
 
 </div>
+
 
 
 
