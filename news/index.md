@@ -34,8 +34,7 @@ classes: no-sidebar
       <a href="{{ item.image }}" target="_blank">
       <img src="{{ item.image }}" alt="news image"
            style="width:100px;
-                  height:100px;
-                  object-fit:cover;
+                  height:auto;
                   border-radius:6px;">
       </a>
     {% endif %}
@@ -62,5 +61,6 @@ classes: no-sidebar
 {% endfor %}
 
 </div>
+
 
 
