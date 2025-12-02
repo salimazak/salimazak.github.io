@@ -45,7 +45,7 @@ classes: no-sidebar
     background:#fff;
     border:1px solid #eee;
   ">
-    <img src="/images/{{ item.image }}"
+    <img src="{{ '/images/' | append: item.image | relative_url }}"
          alt="{{ item.title }}"
          style="width:100%; height:auto;">
   </div>
@@ -91,6 +91,7 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 });
 </script>
+
 
 
 
