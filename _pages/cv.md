@@ -30,11 +30,11 @@ Work experience
 Publications
 ======
   * ### Transactions or Journal papers:
-    * S. Azak, F. Bozkaya, Ş. Tığlıoğlu, A. Yusefi, A. Durdu, “A Unified Monocular Vision-Based Driving Model for Autonomous Vehicles with Multi-Task Capabilities”, IEEE Transactions on Intelligent Vehicles, doi: 10.1109/TIV.2024.3483114.
+    * S. Azak, F. Bozkaya, Ş. Tığlıoğlu, A. Yusefi, A. Durdu, “A Unified Monocular Vision-Based Driving Model for Autonomous Vehicles with Multi-Task Capabilities”, IEEE Transactions on Intelligent Vehicles, vol. 10, no. 9, pp. 4397-4408, 2025, doi: 10.1109/TIV.2024.3483114.
     * S. Azak, F. Bozkaya, A. Durdu, “RapidSense: A Diverse and Multi-modal Autonomous Driving Dataset”, IEEE Robotics and Automation Letters (In Preparation).
   * ### Conference Papers:
-    * S. Azak, E. Erdoğan, "Performance evaluation of the grid-based FastSLAM in V-REP using MATLAB," IEEE 2018 14th International Conference on Advanced Trends in Radioelecrtronics, Telecommunications and Computer Engineering (TCSET), Lviv-Slavske, 2018, pp. 276-281. doi: 10.1109/TCSET.2018.8336202
-    * S. Azak, F. Bozkaya, A. Durdu, Enhancing Generalization in Autonomous Driving: A Comparative Study of Data Augmentation Techniques, 25. Otomatik Kontrol Ulusal Konferansı (TOK 2024) Bildiriler Kitabı , pp. 874-879 2024. 
+    * S. Azak, E. Erdoğan, "Performance evaluation of the grid-based FastSLAM in V-REP using MATLAB," IEEE 2018 14th International Conference on Advanced Trends in Radioelecrtronics, Telecommunications and Computer Engineering (TCSET), Lviv-Slavske, 2018, pp. 276-281, doi: 10.1109/TCSET.2018.8336202
+    * S. Azak, F. Bozkaya, A. Durdu, "Enhancing Generalization in Autonomous Driving: A Comparative Study of Data Augmentation Techniques", 25. Otomatik Kontrol Ulusal Konferansı (TOK 2024), pp. 874-879, 2024. 
   
 Talks
 ======
