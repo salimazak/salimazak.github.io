@@ -29,46 +29,47 @@ classes: no-sidebar
 {% for item in sorted_news %}
 
   <!-- ARTICLE + GÖRSEL YAPISI -->
-  <article style="margin-bottom:2rem; display:flex; gap:20px;">
+<article style="margin-bottom:2rem; display:flex; gap:20px;">
+
   {% if item.image %}
-  <!-- Küçük görsel + popup için A etiketi -->
-    <a href="/images/{{ item.image }}" class="image-popup"
-       style="
-    width:100px;
-    height:100px;
-    flex-shrink:0;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    border-radius:6px;
-    overflow:hidden;
-    background:#fff;
-    border:1px solid #eee;
-  ">
-    <img src="{{ '/images/' | append: item.image | relative_url }}"
-         alt="{{ item.title }}"
-         style="width:100%; height:auto;">
-  </div>
+  <a href="/images/{{ item.image }}" class="image-popup"
+     style="
+      width:100px;
+      height:100px;
+      flex-shrink:0;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:6px;
+      overflow:hidden;
+      background:#fff;
+      border:1px solid #eee;
+     ">
+      <img src="{{ '/images/' | append: item.image | relative_url }}"
+           alt="{{ item.title }}"
+           style="width:100%; height:auto; max-width:100px;">
+  </a>
   {% endif %}
+
+  <div>
+    <!-- Haber başlığı siyah -->
+    <h3 style="margin:0 0 0.25rem 0; color:#000;">
+      <a href="{{ item.url | relative_url }}" style="color:#000; text-decoration:none;">
+        {{ item.title }}
+      </a>
+    </h3>
+    <!-- Tarih Talks formatı -->
+    <p style="color:#6c757d; font-size:0.75em; margin-top:-0.25rem; margin-bottom:0.8rem;">
+      {{ item.date | date: "%B %d, %Y" }}
+    </p>
     <div>
-      <!-- Haber başlığı siyah -->
-      <h3 style="margin:0 0 0.25rem 0; color:#000;">
-        <a href="{{ item.url | relative_url }}" style="color:#000; text-decoration:none;">
-          {{ item.title }}
-        </a>
-      </h3>
-      <!-- Tarih Talks formatı -->
-      <p style="color:#6c757d; font-size:0.75em; margin-top:-0.25rem; margin-bottom:0.8rem;">
-        {{ item.date | date: "%B %d, %Y" }}
-      </p>
-      <div>
-        {{ item.content | markdownify }}
-      </div>
+      {{ item.content | markdownify }}
     </div>
+  </div>
 
-  </article>
+</article>
+<hr />
 
-  <hr />
 
 {% endfor %}
 
@@ -91,15 +92,3 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 });
 </script>
-
-
-
-
-
-
-
-
-
-
-
-
