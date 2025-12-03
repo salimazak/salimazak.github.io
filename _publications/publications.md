@@ -1,6 +1,8 @@
 ---
-layout: publications
-title: Publications
+layout: single
+title: "Publications"
+author_profile: true
+classes: wide
 ---
 
 ## Publications
