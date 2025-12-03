@@ -1,7 +1,8 @@
 ---
+layout: news
 title: "News"
-layout: page
-classes: no-sidebar
+author_profile: true
+classes: wide
 ---
 
 <div style="float:left; width:320px; margin-right:40px; margin-bottom:30px; margin-top:2rem; margin-left:60px;">
@@ -92,3 +93,4 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 });
 </script>
+
