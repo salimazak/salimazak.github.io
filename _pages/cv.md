@@ -1,11 +1,10 @@
 ---
-layout: archive
+layout: single
 title: "CV"
-permalink: /cv/
 author_profile: true
-redirect_from:
-  - /resume
+classes: wide
 ---
+
 
 {% include base_path %}
 
