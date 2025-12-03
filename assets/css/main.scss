@@ -74,8 +74,6 @@
 }
 
 
-
-
 .left-sidebar {
   float: left;
   width: 320px; /* Adjust the width according to your design */
@@ -92,3 +90,23 @@
   max-width: 300px; /* Limit the width of the widget */
 }
 
+/* Başlık hizası */
+.page__title {
+  margin-top: 2rem !important;
+  margin-bottom: 2rem !important;
+}
+
+/* İçerik üst boşluk */
+.page__inner-wrap {
+  padding-top: 1.5rem !important;
+}
+
+/* Global font standardizasyonu */
+.page, .archive, .page__content {
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+/* Haber görselleri */
+.image-popup img {
+  border-radius: 6px;
+}
