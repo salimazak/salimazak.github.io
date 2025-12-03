@@ -11,11 +11,13 @@ layout: default
 
     <div class="page__inner-wrap">
 
-      <header>
-        {% if page.title %}
+      {% unless page.hide_title %}
+      {% if page.title %}
+        <header>
           <h1 class="page__title" itemprop="headline">{{ page.title }}</h1>
-        {% endif %}
-      </header>
+        </header>
+      {% endif %}
+      {% endunless %}
 
       <section class="page__content" itemprop="text">
         {{ content }}
@@ -24,6 +26,7 @@ layout: default
       {% if page.share %}
         {% include social-share.html %}
       {% endif %}
+
     </div>
 
   </article>
