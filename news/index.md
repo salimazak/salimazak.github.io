@@ -5,9 +5,8 @@ author_profile: true
 ---
 
 
-<div style="float:left; width:320px; margin-right:40px; margin-bottom:30px; margin-top:2rem; margin-left:60px;">
-  <img src="/images/SA2.JPG" alt="SA2" style="width:70%; border-radius:6px;">
-
+<!--<div style="float:left; width:320px; margin-right:40px; margin-bottom:30px; margin-top:2rem; margin-left:60px;">
+  <img src="/images/SA2.JPG" alt="SA2" style="width:70%; border-radius:6px;"> -->
   <!-- Visitor map sadece gizlendi — HTML duruyor ama görünmüyor -->
   <div style="margin-top:1rem; display:none;">
     <h3>Where My Visitors Are From</h3>
@@ -15,7 +14,7 @@ author_profile: true
       src="//clustrmaps.com/map_v2.js?d=7yU4-8nEGjyXwXk3zoRxGmIsJofySGSt3WY9aqUCf20&cl=ffffff&w=a">
     </script>
   </div>
-</div>
+<!-- </div> -->
 
 <div style="overflow:hidden;">
 
@@ -93,5 +92,6 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 });
 </script>
+
 
 
