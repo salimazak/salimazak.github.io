@@ -1,0 +1,43 @@
+---
+layout: single
+---
+
+<div style="display:flex; gap:40px; margin-top:2rem;">
+
+  <!-- SOLDA PROFİL FOTOĞRAF -->
+  <div style="width:280px; flex-shrink:0;">
+    <img src="/images/SA2.JPG" alt="Profile" style="width:100%; border-radius:6px;">
+  </div>
+
+  <!-- HABERLER -->
+  <div style="flex:1;">
+
+    {% assign sorted_news = site.news | sort: "date" | reverse %}
+    {% for item in sorted_news %}
+
+      <article style="margin-bottom:2rem;">
+        <h3 style="margin-bottom:0.25rem;">
+          <a href="{{ item.url | relative_url }}" style="text-decoration:none; color:#000;">
+            {{ item.title }}
+          </a>
+        </h3>
+
+        <p style="color:#666; font-size:0.8em; margin-top:0;">
+          {{ item.date | date: "%B %d, %Y" }}
+        </p>
+
+        {{ item.content | markdownify }}
+
+        {% if item.image %}
+        <a href="/images/{{ item.image }}" class="image-popup">
+          <img src="/images/{{ item.image }}" style="width:120px; margin-top:8px; border-radius:6px;">
+        </a>
+        {% endif %}
+
+      </article>
+
+      <hr />
+    {% endfor %}
+
+  </div>
+</div>
