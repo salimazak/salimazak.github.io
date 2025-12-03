@@ -1,9 +1,9 @@
 ---
-layout: news
 title: "News"
+layout: single
 author_profile: true
-classes: wide
 ---
+
 
 <div style="float:left; width:320px; margin-right:40px; margin-bottom:30px; margin-top:2rem; margin-left:60px;">
   <img src="/images/SA2.JPG" alt="SA2" style="width:70%; border-radius:6px;">
@@ -93,4 +93,5 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 });
 </script>
+
 
