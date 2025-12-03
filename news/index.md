@@ -21,9 +21,9 @@ author_profile: true
 <!-- Publications ile %100 aynı başlık -->
 <!-- <h1>{{ page.title }}</h1> -->
 <!-- Başlığı Publications gibi yap -->
-<h1 style="margin-top: 2rem; margin-bottom: 2rem;">
+<!-- <h1 style="margin-top: 2rem; margin-bottom: 2rem;">
   {{ page.title }}
-</h1>
+</h1> -->
 
 {% assign sorted_news = site.news | sort: "date" | reverse %}
 {% for item in sorted_news %}
@@ -92,6 +92,7 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 });
 </script>
+
 
 
 
