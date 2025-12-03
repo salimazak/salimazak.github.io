@@ -1,11 +1,10 @@
 ---
-permalink: /
-title: ""
+layout: single
+title: "About"
 author_profile: true
-redirect_from: 
-  - /about/
-  - /about.html
+classes: wide
 ---
+
 
 Salim Azak is a Lecturer at the Structural and Earthquake Engineering Laboratory in the Department of Civil Engineering at Middle East Technical University. He holds a Ph.D. from the RACLAB of Electrical and Electronics Engineering at Konya Technical University, supervised by Prof. Akif Durdu. His doctoral thesis focused on vision-based driving for autonomous vehicles.
 
