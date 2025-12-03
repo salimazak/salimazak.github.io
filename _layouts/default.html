@@ -4,17 +4,14 @@ layout: compress
 
 {% include base_path %}
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="{{ site.locale | slice: 0,2 }}" class="no-js">
   <head>
     {% include head.html %}
     {% include head/custom.html %}
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
   </head>
 
   <body class="{{ page.classes }}">
-
     {% include browser-upgrade.html %}
     {% include masthead.html %}
 
@@ -28,6 +25,5 @@ layout: compress
     </div>
 
     {% include scripts.html %}
-
   </body>
 </html>
