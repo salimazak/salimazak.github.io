@@ -1,3 +1,10 @@
+---
+layout: single
+title: "Contact"
+author_profile: true
+classes: wide
+---
+
 Salim Azak
 
 Middle East Technical University (METU)  
