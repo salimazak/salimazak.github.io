@@ -5,14 +5,28 @@ author_profile: false
 classes: wide
 ---
 
-<img src="/images/SA2.JPG" alt="SA2" style="float: left; width: 300px; margin-left: 15px; margin-right: 30px; margin-bottom: 50px;">
+<div style="
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+  margin-top: 24px;
+  flex-wrap: wrap;
+">
 
-<div class="text-container">
+  <img src="/images/SA2.JPG" alt="SA2" style="
+    width: 300px;
+    border-radius: 6px;
+    flex-shrink: 0;
+  ">
+
+  <div style="flex: 1; min-width: 280px;">
+
   <p>Salim Azak is a Lecturer at the Structural and Earthquake Engineering Laboratory in the Department of Civil Engineering at Middle East Technical University. He holds a Ph.D. from the RACLAB of Electrical and Electronics Engineering at Konya Technical University, supervised by Prof. Akif Durdu. His doctoral thesis focused on self-driving cars.</p>
 
   <p>His research focuses on the intersection of robotics and computer vision, emphasizing sensor-based control systems. His primary interests lie in extracting meaningful information from visual data to facilitate robot navigation. Additionally, he explores the fusion of visual, inertial, and LiDAR sensors to enhance navigation accuracy. Within this scope, his work covers end-to-end autonomous driving systems, autonomous flight systems, and multi-task learning. His expertise further extends to critical areas such as state estimation, localization, visual SLAM, and visual odometry.</p>
 
   <p>Dr. Azak serves as an Associate Editor for IEEE Robotics and Automation Letters. He is also a member of several prestigious organizations, including:</p>
+
   <ul>
     <li>IEEE</li>
     <li>IEEE Robotics and Automation Society</li>
@@ -23,6 +37,7 @@ classes: wide
   </ul>
 
   <p>Dr. Azak has also served as a reviewer for numerous transactions, journals, and international conferences, including:</p>
+
   <ul>
     <li>IEEE Transactions on Robotics</li>
     <li>IEEE Robotics and Automation Letters</li>
@@ -32,6 +47,6 @@ classes: wide
     <li>IROS (IEEE/RSJ International Conference on Intelligent Robots and Systems)</li>
     <li>ITSC (IEEE Intelligent Transportation Systems Conference)</li>
   </ul>
+
+  </div>
 </div>
-
-
