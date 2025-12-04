@@ -137,4 +137,36 @@
     margin-right: 0 !important;
     padding-left: 0 !important;
 }
+/* ============================================= */
+/* ABOUT ME - Custom Layout */
+/* ============================================= */
+
+.aboutme-wrapper {
+  max-width: 900px;
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
+
+/* Resim + metin hizalama */
+.aboutme-flex {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+.aboutme-flex img {
+  width: 300px;
+  border-radius: 8px;
+}
+
+@media (max-width: 900px) {
+  .aboutme-flex {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .aboutme-flex img {
+    margin-bottom: 20px;
+  }
+}
 
