@@ -1,7 +1,8 @@
 ---
 title: "About Me"
-layout: page
-classes: no-sidebar
+layout: single
+author_profile: false
+classes: wide
 ---
 
 <img src="/images/SA2.JPG" alt="SA2" style="float: left; width: 300px; margin-left: 15px; margin-right: 30px; margin-bottom: 50px;">
