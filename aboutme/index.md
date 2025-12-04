@@ -5,6 +5,8 @@ author_profile: false
 classes: wide
 ---
 
+<div style="max-width: 960px; margin-left: 0; margin-right: auto;">
+
 <div style="
   display: flex;
   gap: 32px;
@@ -49,4 +51,6 @@ classes: wide
   </ul>
 
   </div>
+</div>
+
 </div>
