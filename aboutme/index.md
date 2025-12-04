@@ -1,3 +1,7 @@
+<style>
+body { background: yellow; }
+</style>
+
 ---
 title: "About Me"
 layout: single
