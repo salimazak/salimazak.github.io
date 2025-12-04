@@ -127,4 +127,14 @@
   margin-left: 0 !important;
   padding-left: 0 !important;
 }
+/* ABOUT ME FIX — force left alignment ignoring layout centering */
+.aboutme-page #main,
+.aboutme-page .page,
+.aboutme-page .page__inner-wrap,
+.aboutme-page .page__content {
+    max-width: none !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+}
 
