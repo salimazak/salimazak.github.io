@@ -1,31 +1,17 @@
-<style>
-body { background: yellow; }
-</style>
-
 ---
 title: "About Me"
-layout: single
+layout: aboutme
 author_profile: false
 classes: wide aboutme-page
 ---
 
-<div style="max-width: 960px; margin-left: 0; margin-right: auto;">
+<div class="aboutme-container">
 
-<div style="
-  display: flex;
-  gap: 32px;
-  align-items: flex-start;
-  margin-top: 24px;
-  flex-wrap: wrap;
-">
+<div class="aboutme-flex">
 
-  <img src="/images/SA2.JPG" alt="SA2" style="
-    width: 300px;
-    border-radius: 6px;
-    flex-shrink: 0;
-  ">
+  <img src="/images/SA2.JPG" alt="SA2" class="aboutme-photo">
 
-  <div style="flex: 1; min-width: 280px;">
+  <div class="aboutme-text">
 
   <p>Salim Azak is a Lecturer at the Structural and Earthquake Engineering Laboratory in the Department of Civil Engineering at Middle East Technical University. He holds a Ph.D. from the RACLAB of Electrical and Electronics Engineering at Konya Technical University, supervised by Prof. Akif Durdu. His doctoral thesis focused on self-driving cars.</p>
 
