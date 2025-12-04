@@ -2,7 +2,7 @@
 title: "About Me"
 layout: single
 author_profile: false
-classes: wide
+classes: wide aboutme-page
 ---
 
 <div style="max-width: 960px; margin-left: 0; margin-right: auto;">
