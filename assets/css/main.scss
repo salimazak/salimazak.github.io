@@ -111,13 +111,20 @@
   border-radius: 6px;
 }
 
-.aboutme-page .page__inner-wrap {
+/* ABOUT ME HIZALAMA OVERRIDE */
+.aboutme-page #main {
   max-width: 100% !important;
+  margin-left: 0 !important;
+}
+
+.aboutme-page .page {
+  max-width: 100% !important;
+  margin-left: 0 !important; 
+}
+
+.aboutme-page .page__inner-wrap {
+  max-width: 960px !important;
   margin-left: 0 !important;
   padding-left: 0 !important;
 }
 
-.aboutme-page .page__content {
-  max-width: 960px;
-  margin-left: 0 !important;
-}
