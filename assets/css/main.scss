@@ -138,35 +138,55 @@
     padding-left: 0 !important;
 }
 /* ============================================= */
-/* ABOUT ME - Custom Layout */
+/* ABOUT ME — Custom layout + remove left padding */
 /* ============================================= */
 
-.aboutme-wrapper {
+/* About Me container genişliği kontrolü */
+.aboutme-container {
   max-width: 900px;
   margin-left: 0 !important;
   padding-left: 0 !important;
 }
 
-/* Resim + metin hizalama */
+/* Flex düzeni */
 .aboutme-flex {
   display: flex;
-  gap: 30px;
+  gap: 32px;
   align-items: flex-start;
+  flex-wrap: wrap;
+  margin-top: 24px;
 }
 
-.aboutme-flex img {
+/* Fotoğraf */
+.aboutme-photo {
   width: 300px;
-  border-radius: 8px;
+  border-radius: 6px;
+  flex-shrink: 0;
 }
 
+/* Metin alanı */
+.aboutme-text {
+  flex: 1;
+  min-width: 280px;
+}
+
+/* Responsive: ekran daralınca foto üstte */
 @media (max-width: 900px) {
   .aboutme-flex {
     flex-direction: column;
     align-items: center;
   }
-
-  .aboutme-flex img {
+  .aboutme-photo {
     margin-bottom: 20px;
   }
+}
+
+/* Tema SINGLE layout sol padding override */
+.aboutme-page .page,
+.aboutme-page .page__inner-wrap,
+.aboutme-page .page__content,
+.aboutme-page #main {
+  padding-left: 0 !important;
+  margin-left: 0 !important;
 }
 
