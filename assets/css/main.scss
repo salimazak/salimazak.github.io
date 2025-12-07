@@ -189,4 +189,30 @@
   padding-left: 0 !important;
   margin-left: 0 !important;
 }
+/* ====================================================== */
+/* ABOUT ME — Force full-width layout + remove centering  */
+/* ====================================================== */
+
+.aboutme-page .page {
+  max-width: none !important;
+  width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 0 !important;
+}
+
+.aboutme-page .page__inner-wrap {
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+}
+
+.aboutme-page .page__content {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
+
+.aboutme-page #main {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
 
