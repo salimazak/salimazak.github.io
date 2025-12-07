@@ -2,6 +2,18 @@
 layout: single
 ---
 
-<div class="aboutme-wrapper">
-  {{ content }}
-</div>
+{% capture _classes %}
+aboutme-page
+{% endcapture %}
+
+<body class="layout--single {{ _classes }}">
+  <div id="main" role="main">
+    <div class="page">
+      <div class="page__inner-wrap">
+        <section class="page__content">
+          {{ content }}
+        </section>
+      </div>
+    </div>
+  </div>
+</body>
