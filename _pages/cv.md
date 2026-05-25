@@ -46,6 +46,7 @@ Talks
 Professional Activities
 ======
 * Associate Editor at IEEE Robotics and Automation Letters (RA-L)
+  * Recipient of the IEEE RA-L Outstanding Associate Editor Award, 2026
 * Reviewer of the following journals and conferences
   * IEEE Transactions on Robotics
   * IEEE Robotics and Automation Letters
@@ -53,7 +54,7 @@ Professional Activities
   * Electronics Letters
   * ICRA (IEEE International Conference on Robotics and Automation)
   * IROS (IEEE/RSJ International Conference on Intelligent Robots and Systems)
-  * ITSC (IEEE Intelligent Transportation Systems Conference
+  * ITSC (IEEE Intelligent Transportation Systems Conference)
 * Tutorial Presenter
   * TOK2024 Conference (Topic: Vision-Based Prediction of Control Commands in Autonomous Driving Systems)
 
