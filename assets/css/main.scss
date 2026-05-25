@@ -211,8 +211,13 @@
   padding-left: 0 !important;
 }
 
+
 .aboutme-page #main {
   margin-left: 0 !important;
   padding-left: 0 !important;
 }
-
+.aboutme-page .aboutme-text p,
+.aboutme-page .aboutme-text li {
+  text-align: justify;
+  text-justify: inter-word;
+}
